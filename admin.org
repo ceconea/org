@@ -1,0 +1,26 @@
+* Administracion CECONEA
+#+STARTUP: overview
+* Actividades
+** TODO [2024-03-13 Wed] Definicion de la red infiniband
+** [2024-03-12 Tue] Baterias UPS APC
+Se cambiaron las baterias.
+** [2024-03-12 Tue] Baterias UPC EATON
+Se desarmo porque habia un problema con un cooler
+
+** ----------------------------------------
+* TODOs Tareas cortas.
+** TODO [2024-03-14 Thu] yakaira 10.11.12.60-59 no se puede acceder
+* Deteccion de problemas. Largo plazo
+** TODO [2024-03-13 Wed] La red 10.11.13.x se accede desde la 10.11.12.x
+deberia ser privada?
+Lo que esta sucediendo es que se accede a la 13 desde la 12 por el port forwarding y desde la 12 a la 13 por lo que no son redes independientes y se saturan entre si.
+Para intentar independizarlas:
+https://serverfault.com/questions/877449/how-to-forbid-forwarding-packets-to-private-network-addresses-via-interface
+iptables -A FORWARD -o eth0 -j REJECT
+(hay que decirle que no haga FORWARD desde la placa de la red 13
+
+** TODO [2024-03-14 Thu] Generacion de venv general con todas las aplicaciones.
+* Reportes
+** [2024-03-14 Thu] Instalacion grial4
+blabla
+

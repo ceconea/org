@@ -1,0 +1,291 @@
+# Hey Emacs, this is a -*- org -*- file ...
+#+TITLE:     Instrucciones CECONEA
+#+DESCRIPTION: Instrucciones basicas de uso
+#+KEYWORDS:  syntax, org, document
+#+OPTIONS:   H:5 toc:2 p:t
+
+#+SETUPFILE: /home/pulido/alm/soft/org-html-themes/org/theme-readtheorg-local.setup
+
+#+PROPERTY:  header-args :eval never-export
+** Estructura del cluster
+
+Si se quiere ver los recursos disponibles, servidores y demas estructura:
+
+[[./servidores.html]]
+
+** Instrucciones ingresar al CECONEA
+
+Para logearse al sistema:
+
+#+BEGIN_SRC bash
+ssh usuario@200.45.54.94
+#+END_SRC
+o
+
+#+BEGIN_SRC bash
+usuario@gica.exa.unne.edu.ar
+#+END_SRC
+
+Esta maquina se llama sun es el servidor publico
+
+El servidor de calculo para realizar computos (en serie) es grial, desde sun hay que loggearse en grial:
+
+#+BEGIN_SRC bash
+sun:~$ ssh grial
+#+END_SRC
+
+El home de los usuarios (disco) es compartido entre las dos maquinas a traves de NFS (net file system). Todos los archivos que estan en la sun lo vas a ver en la grial. Tambien se puede transferir directamente a la sun y lo vas a ver desde grial.
+
+Hay dos cosas que pueden ayudar para evitar meterse a una maquina y luego a la otra.
+
+1) Realizar un tunel.
+2) ssh without password.
+
+
+**  Ingresar directamente a la grial
+
+Es posible realizar un tunel para ingresar/trabajar directamente a la grial, en lugar de tener que ingresar a la sun y luego a la grial.
+
+En la maquina local se debe hacer:
+#+BEGIN_SRC bash
+ssh -fNL 12342:10.11.12.1:22 200.45.54.94
+#+END_SRC
+
+y luego se puede acceder a la grial  directamente a traves del puerto 12342:
+
+#+BEGIN_SRC bash
+ssh localhost -p 12342 
+#+END_SRC
+
+#+BEGIN_SRC bash
+scp -P 12342 localhost:archivo-grial  archivo-pclocal
+#+END_SRC
+
+** ssh sin claves.
+
+Si vamos a trabajar seguido en forma remota se vuelve engorroso estar permanentemente metiendo los passwords cada vez que queremos conectarnos a una terminal del servidor remoto.
+
+ssh tiene un protocolo que lo que hace es con una sola autentificacion (generalmetne cuando comenzamos a trabajar en la computadora local, se ingresa una passphrase y a partir de alli ya vamos a tener acceso a los servidores sin clave. Pero para eso los servidores se tienen que compartir una key.
+
+Generacion de un passphrase para que no nos pida password. ssh without password
+
+Lo que vamos a hacer  es  generar una ssh passphase y ponerla en ~/.ssh/authorized_keys
+
+Es obligatorio tener una passphrase!
+
+a. Firstly, generate your public/private keys using ssh-keygen
+
+#+BEGIN_SRC bash
+ssh-keygen -t rsa
+#+END_SRC
+
+b. Now copy the id_rsa.pub to the .ssh/authorized_keys  file  (y tambien conviene poner en la maquina local las mismas keys).
+
+c. Para poner una sola vez la passphase y que despues la recuerde durante la sesion:
+
+#+BEGIN_SRC bash
+exec ssh-agent bash
+ssh-add
+#+END_SRC
+
+Tambien se puede poner en el inicio de la sesion de xwindows.  Una posibilidad es agregarlo en el archivo .xinitrc (El que lee el sistema para ingresar a las xwindows del usuario):
+
+#+BEGIN_SRC bash
+    eval `ssh-agent -s`
+    export SSH_ASKPASS=/usr/lib64/ssh/x11-ssh-askpass
+    /usr/bin/ssh-add < /dev/null 
+#+END_SRC
+
+** Correr en python en background
+
+
+Para dejar corriendo aplicaciones despues de desloggearse, sin que se nos corte la ejecucion cuando salimos del sistema. Hay que hacer:
+
+#+BEGIN_SRC bash
+nohup python3 script.py &
+#+END_SRC
+
+Yo tengo un peque~no script "nohupyt" que guarda la salida y los errores en un archivo: 
+
+#+BEGIN_SRC bash
+#!/bin/bash
+#
+# Manda a ejecutar un python script en batch con el modo nohup y guarda resultados en un file.
+# Uso: nohupyt script.py
+#  Salida  se graba en script.out
+if [ $# -eq 1 ]; then
+    filename=${1%.py}
+fi
+
+nohup python3 $filename.py > $filename.out 2>&1 &
+#+END_SRC
+
+** screen multiplexer
+
+Una alternativa a correr en background es usar screen. screen tiene varias funcionalidades la mas importante es que nos permite trabajar con multiples terminales a la vez en una sola ventana.
+Se accede por:
+#+BEGIN_SRC bash
+screen
+#+END_SRC
+
+*** Los principales shortcuts de screen
+
+C-a c  crea una ventana nueva
+C-a n  Switch to the next window.
+C-a p  Switch to the previous window
+C-a S  Split the current region into two new ones.
+C-a w  Show a list of windows.
+C-a X  Kill the current region.
+C-a tab Switch the input focus to the next region.
+C-a "   Present  a list of all windows for selection.
+
+Listado de las shells y el estado: `screen -ls`
+
+Para poner el directorio actual como de trabajo (para abrir nuevas shells): `screen -X eval "chdir $PWD"`
+
+*** Correr simulaciones en background con screen
+
+Para dejar una corrida corriendo y cerrar el screen:
+`Ctrl+a d  detach`
+
+Luego cuando se abre se puede listar las terminales que tengo abiertas:
+`screen -ls`
+
+Luego para attach:
+`screen -r 2477.pts-0.server1`
+
+En general yo lo abro con los modificadores:
+`screen -DRRq &`
+
+Esto hace que me reattachee todo lo que tenia antes.
+
+*** Correr screen por default con el ssh
+La opcion recomendada es:
+
+#+BEGIN_SRC bash
+ssh -t host.example.com screen -DRRq &
+#+END_SRC
+
+
+
+** Como correr jupyter en el CECONEA
+
+Sin en lugar de tener un script python tenemos una jupyter notebook, Lo que queremos es correrla en el servidor y poder un servidor remoto con port forwarding, pero accediendo desde el browser local. Veamos las instrucciones para hacer esto.
+
+
+1. Me conecto a sun y luego a grial:
+
+#+BEGIN_SRC bash
+ssh -4fNL 2222:10.11.12.1:22 -4fNL 8889:10.11.12.1:8889 200.45.54.94
+#+END_SRC
+
+2. Luego abro la conexion en la maquina local
+#+BEGIN_SRC bash
+ssh -p 2222 localhost
+#+END_SRC
+
+
+3. Abrir una jupyter notebook sin browser:
+   
+#+BEGIN_SRC bash
+jupyter notebook --no-browser --port=8889 --ip=0.0.0.0 
+#+END_SRC
+
+Copiar el token que aparece.
+
+4. En la maquina local en el browser:
+   http://localhost:8889/?token=8d186032bbbe095b294789e863b065a546fcc15b68683c99
+
+   (el token lo tengo que copiar del servidor remoto).
+
+Para mas detalle ver referencia:
+
+https://thedatafrog.com/en/articles/remote-jupyter-notebooks/
+
+** Como correr jupyter desde el GICA
+Hacer en la maquina local:
+
+#+BEGIN_SRC bash
+yvy:~$ ssh -L 8080:localhost:8080 grial
+#+END_SRC
+
+Esto permite abrir una conexion a grial (con port forwarding al puerto 8080). En la grial ejecutar:
+
+#+BEGIN_SRC bash
+grial:~$ jupyter notebook --no-browser --port=8080
+#+END_SRC
+
+Ahora una vez que se abra el jupyter server se debe copiar la linea:
+
+http://localhost:8080/?token=xxxxxx
+
+y pastear en el browser local (firefox o lo que sea)
+
+Bingo! Estamos corriendo cosas de jupyter en grial con conexion en la maquina local.
+
+Si nos dice que el puerto esta en uso:  The port 8080 is already in use, trying another port. probar con el puerto recomendado (o con puertos alternativos 8081 8888  8889)
+
+** Datos y recursos disponibles
+
+En el directorio:
+
+/home/data
+
+Se encuentran los links a todos los datos disponibles.
+
+** Virtual environment para Machine learning
+
+La version de python por default en grial es la python 3.6.13. Esta tiene todas las librerias de machine learning instaladas.
+
+Si se quiere trabajar en versiones mas nuevas hay un par de virtual enviroments en /usr/local/
+
+
+En /usr/local de grial se encuentra instalada una version (venv) para ml con python 3.9
+
+Para trabajar en ese enviroment se debe hacer
+
+#+BEGIN_SRC python
+source /usr/local/ml/bin/activate
+#+END_SRC
+
+
+#+BEGIN_SRC python
+source /usr/local/ml-p39/bin/activate
+#+END_SRC
+
+** Como conectarse con VSCODE desde windows
+
+1. Instalar la extensión "Remote - SSH".
+2. Presionar F1 y abrir la opción "Remote-SSH: Open SSH configuration file"
+3. Una vez en el archivo configuramos la conexión
+
+#+BEGIN_SRC 
+
+ost NOMBRE_QUE_LE_ASIGNAMOS_SERVER_EXTERNO
+HostName 200.45.54.94
+User TU_USER
+Host NOMBRE_QUE_LE_ASIGNAMOS_SERVER_INTERNO
+HostName 10.11.12.60
+User TU_USER
+Port 22
+ProxyJump NOMBRE_QUE_LE_ASIGNAMOS_SERVER_EXTERNO
+Host NOMBRE_QUE_LE_ASIGNAMOS_SERVER_INTERNO
+HostName huayra
+User TU_USER
+Port 22
+ProxyJump NOMBRE_QUE_LE_ASIGNAMOS_SERVER_EXTERNO
+#+END_SRC
+
+
+Utilizando el ProxyJump, estamos utilizando al servidor que coloquemos como intermediario
+para conectarnos al siguiente servidor, de forma tal que es lo mismo que conectarnos mediante SSH a el intermediario y luego un SSH al servidor final.
+
+En esa configuración tenemos, en orden, el servidor externo configurado (en el caso del
+CECONEA es el sun), luego configuramos dos servidores mas, internos, vemos que se puede
+colocar tanto la IP del servidor como el alias asignado.
+
+4. Ahora solo resta conectarse al servidor que configuramos: Apretamos F1 y seleccionamos
+"Remote-SSH: Connect to ...".
+5. Al conectarse te va a pedir que especifiques el OS del equipo al que te conectas,
+password en caso de ser necesaria y demas información que se suele pedir en una conexión
+SSH.

@@ -1,0 +1,25 @@
+# Hey Emacs, this is a -*- org -*- file ...
+#+TITLE:     Instrucciones CECONEA
+#+DESCRIPTION: Instrucciones basicas de uso
+#+KEYWORDS:  syntax, org, document
+#+OPTIONS:   H:5 num:nil toc:2 p:t
+
+#+SETUPFILE: /home/pulido/alm/soft/org-html-themes/org/theme-readtheorg-local.setup
+
+#+PROPERTY:  header-args :eval never-export
+
+
+* Instrucciones
+[[./instrucciones.html]]
+* Servidores
+[[./servidores.html]]
+* Datos
+
+centroeuropeo
+cikm
+hko-7
+merra
+noaa
+sinarame
+taasrad19
+mldat

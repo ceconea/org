@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-07-02 Sat 20:45 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Estructura servidores CECONEA</title>
+<meta name="author" content="pulido" />
+<meta name="description" content="Instrucciones basicas de uso" />
+<meta name="keywords" content="syntax, org, document" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/readtheorg.css"/>
+<script type="text/javascript" src="src/lib/js/jquery.min.js"></script>
+<script type="text/javascript" src="src/lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Estructura servidores CECONEA</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org1a5888a">1. Definicion estructura servidores de computo y almacenamiento</a>
+<ul>
+<li><a href="#org32d8382">1.1. Servidores</a></li>
+<li><a href="#orga657242">1.2. Servidores de almacenamiento. Datos</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1a5888a" class="outline-2">
+<h2 id="org1a5888a"><span class="section-number-2">1.</span> Definicion estructura servidores de computo y almacenamiento</h2>
+<div class="outline-text-2" id="text-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Nick</th>
+<th scope="col" class="org-left">Tipo servidor</th>
+<th scope="col" class="org-left">Especificicacion</th>
+<th scope="col" class="org-right">IP interno</th>
+<th scope="col" class="org-left">NFS</th>
+<th scope="col" class="org-left">Capac</th>
+<th scope="col" class="org-left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">sun</td>
+<td class="org-left">publico 200.45.54.94</td>
+<td class="org-left">sun opteron</td>
+<td class="org-right">10.11.12.101</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">grial</td>
+<td class="org-left">central/computo</td>
+<td class="org-left">i9/10c/GPU/128gb</td>
+<td class="org-right">10.11.12.1</td>
+<td class="org-left">/home</td>
+<td class="org-left">800gb</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">NIS/DHCP/HOME</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">/mnt/grial<sub>1</sub></td>
+<td class="org-left">3.4Tb</td>
+<td class="org-left">simulaciones</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Red Salida</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">/mnt/grial<sub>2</sub></td>
+<td class="org-left">3.4Tb</td>
+<td class="org-left">simulaciones</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">10.40.60.228</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">/mnt/grial<sub>3</sub></td>
+<td class="org-left">800Gb</td>
+<td class="org-left">simulaciones</td>
+</tr>
+
+<tr>
+<td class="org-left">grial2</td>
+<td class="org-left">computo</td>
+<td class="org-left">i7/6c/GPU/64gb</td>
+<td class="org-right">10.11.12.2</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">grial3</td>
+<td class="org-left">computo</td>
+<td class="org-left">i7/8c/GPU/128gb</td>
+<td class="org-right">10.11.12.3</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">ypy</td>
+<td class="org-left">almacenamiento</td>
+<td class="org-left">SuperMicro-24d</td>
+<td class="org-right">10.11.12.4</td>
+<td class="org-left">/mnt/ypy<sub>1</sub></td>
+<td class="org-left">22Tb</td>
+<td class="org-left">simul (lleno)</td>
+</tr>
+
+<tr>
+<td class="org-left">ypy2</td>
+<td class="org-left">almacenamiento</td>
+<td class="org-left">i7</td>
+<td class="org-right">10.11.12.5</td>
+<td class="org-left">/mnt/ypy2<sub>1</sub></td>
+<td class="org-left">7.2Tb</td>
+<td class="org-left">ERA-ECMWF</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">/mnt/ypy2<sub>2</sub></td>
+<td class="org-left">7.2Tb</td>
+<td class="org-left">MERRA-NASA</td>
+</tr>
+
+<tr>
+<td class="org-left">ypy3</td>
+<td class="org-left">almacenamiento</td>
+<td class="org-left">i7</td>
+<td class="org-right">10.11.12.6</td>
+<td class="org-left">/mnt/ypy3<sub>1</sub></td>
+<td class="org-left">TBC</td>
+<td class="org-left">RADAR/SIMULACIONES</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">/mnt/ypy3<sub>2</sub></td>
+<td class="org-left">TBC</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<div id="outline-container-org32d8382" class="outline-3">
+<h3 id="org32d8382"><span class="section-number-3">1.1.</span> Servidores</h3>
+<div class="outline-text-3" id="text-1-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Nick</th>
+<th scope="col" class="org-left">Tipo servidor</th>
+<th scope="col" class="org-left">Especificicacion</th>
+<th scope="col" class="org-right">IP interno</th>
+<th scope="col" class="org-right">IP externo</th>
+<th scope="col" class="org-left">Funcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">sun</td>
+<td class="org-left">publico</td>
+<td class="org-left">sun opteron</td>
+<td class="org-right">10.11.12.101</td>
+<td class="org-right">200.45.54.94</td>
+<td class="org-left">SSH/VPN/HTTP/GIT</td>
+</tr>
+
+<tr>
+<td class="org-left">grial</td>
+<td class="org-left">central/computo</td>
+<td class="org-left">i9/10c/GPU/128gb</td>
+<td class="org-right">10.11.12.1</td>
+<td class="org-right">10.40.60.228</td>
+<td class="org-left">NIS/DHCP/HOME/PYTHON/F90/ML</td>
+</tr>
+
+<tr>
+<td class="org-left">grial2</td>
+<td class="org-left">computo</td>
+<td class="org-left">i7/6c/GPU/64gb</td>
+<td class="org-right">10.11.12.2</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">PYTHON/F90/ML</td>
+</tr>
+
+<tr>
+<td class="org-left">grial3</td>
+<td class="org-left">computo</td>
+<td class="org-left">i7/8c/GPU/128gb</td>
+<td class="org-right">10.11.12.3</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">PYTHON/F90/ML</td>
+</tr>
+
+<tr>
+<td class="org-left">ypy</td>
+<td class="org-left">almacenamiento</td>
+<td class="org-left">SuperMicro-24d</td>
+<td class="org-right">10.11.12.4</td>
+<td class="org-right">10.40.60.229</td>
+<td class="org-left">NFS</td>
+</tr>
+
+<tr>
+<td class="org-left">ypy2</td>
+<td class="org-left">almacenamiento</td>
+<td class="org-left">i7</td>
+<td class="org-right">10.11.12.5</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">NFS</td>
+</tr>
+
+<tr>
+<td class="org-left">ypy3</td>
+<td class="org-left">almacenamiento</td>
+<td class="org-left">i7</td>
+<td class="org-right">10.11.12.6</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">NFS</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">sun02-11</td>
+<td class="org-left">cluster computo</td>
+<td class="org-left">sun-Opteron</td>
+<td class="org-right">101-112</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">F90/MPI</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">huayra</td>
+<td class="org-left">cluster computo</td>
+<td class="org-left">ARM-Xeon</td>
+<td class="org-right">121-129</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">F90/MPI</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">huayra</td>
+<td class="org-left">Cluster computo</td>
+<td class="org-left">Supermicro-Xeon</td>
+<td class="org-right">131-146</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">En mantenimiento Update SO</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<div id="outline-container-orga657242" class="outline-3">
+<h3 id="orga657242"><span class="section-number-3">1.2.</span> Servidores de almacenamiento. Datos</h3>
+<div class="outline-text-3" id="text-1-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Nick</th>
+<th scope="col" class="org-left">NFS</th>
+<th scope="col" class="org-left">Capac</th>
+<th scope="col" class="org-left">Uso</th>
+<th scope="col" class="org-left">Disponibilidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">grial</td>
+<td class="org-left">/home</td>
+<td class="org-left">800gb</td>
+<td class="org-left">home</td>
+<td class="org-left">Max 40Gb !!!</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">/mnt/grial<sub>1</sub></td>
+<td class="org-left">3.4Tb</td>
+<td class="org-left">simulaciones</td>
+<td class="org-left">Libre</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">/mnt/grial<sub>2</sub></td>
+<td class="org-left">3.4Tb</td>
+<td class="org-left">simulaciones</td>
+<td class="org-left">Libre</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">/mnt/grial<sub>3</sub></td>
+<td class="org-left">800Gb</td>
+<td class="org-left">back up</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">/mnt/grial<sub>4</sub></td>
+<td class="org-left">17.2Tb</td>
+<td class="org-left">back up</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left">ypy</td>
+<td class="org-left">/mnt/ypy<sub>1</sub></td>
+<td class="org-left">22.0Tb</td>
+<td class="org-left">simul (lleno)</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left">ypy2</td>
+<td class="org-left">/mnt/ypy2<sub>1</sub></td>
+<td class="org-left">7.2Tb</td>
+<td class="org-left">ERA-ECMWF</td>
+<td class="org-left">Solo lectura</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">/mnt/ypy2<sub>2</sub></td>
+<td class="org-left">7.2Tb</td>
+<td class="org-left">MERRA-NASA</td>
+<td class="org-left">Lectura</td>
+</tr>
+
+<tr>
+<td class="org-left">ypy3</td>
+<td class="org-left">/mnt/ypy3<sub>1</sub></td>
+<td class="org-left">TBC</td>
+<td class="org-left">RADAR</td>
+<td class="org-left">Lectura</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">/mnt/ypy3<sub>2</sub></td>
+<td class="org-left">TBC</td>
+<td class="org-left">simulaciones</td>
+<td class="org-left">Libre</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: pulido</p>
+<p class="date">Created: 2022-07-02 Sat 20:45</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
