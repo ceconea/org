@@ -1,0 +1,76 @@
+
+** Instalacion de paquetes extra rpm
+
+zypper install emacs
+
+
+cat > to_install << EOF
+emacs
+gcc-fortran
+gcc7-fortran
+netcdf-fortran-gnu-hpc
+libnetcdf-fortran-gnu-hpc
+libnetcdf-fortran-gnu-openmpi2-hpc
+netcdf-fortran-gnu-openmpi2-hpc
+netcdf-fortran_4_5_3-gnu-openmpi2-hpc
+libgfortran4
+git
+make
+emacs
+emacs-nox
+emacs-x11
+m4
+libnetcdf-gnu-hpc
+libnetcdf18
+libnetcdf_c++-devel
+libnetcdf_c++4
+netcdf-openmpi2-devel
+libnetcdf_c++4-devel
+netcdf_4_7_4-gnu-hpc
+netcdf_4_7_4-gnu-hpc-devel
+netcdf-openmpi2
+netcdf
+netcdf-devel
+mpich 
+mpich-devel
+mpich-gnu-hpc 
+mpich-gnu-hpc-devel
+openmpi2
+openmpi2-devel
+openmpi2-gnu-hpc
+openmpi2-gnu-hpc-devel
+python311
+python311-numpy
+python311-tk
+python311-urllib3
+EOF
+
+cat to_install | xargs sudo zypper install
+
+** pip con virtual environment
+
+/usr/local/ml O convendra en el /home/ml???? (para que sea compartido en todos los servidores?).
+
+python3.11 -m venv /usr/local/ml
+source /usr/local/ml/bin/activate
+pip3 install --upgrade  tqdm setuptools six numpy matplotlib opencv-python scipy scikit-learn pandas  wrf-python jupyter spyder torch torchvision torchaudio tensorflow 
+
+
+** Instalacion de nvidia drivers
+
+zypper addrepo --refresh 'https://download.nvidia.com/opensuse/leap/$releasever' NVIDIA
+zypper in nvidia-video-G06
+zypper in nvidia-compute-utils-G06 nvidia-utils-G0
+
+Luego hacer nvidia-smi  si hay respuesta esta todo bien!
+
+Pero si hay problemas denuevo hay que hacer: prime-select nvidia
+
+
+** Instalacion librerias cuda [2024-02-04 Sun]
+https://developer.nvidia.com/cuda-downloads
+
+wget https://developer.download.nvidia.com/compute/cuda/12.3.2/local_installers/cuda-repo-opensuse15-12-3-local-12.3.2_545.23.08-1.x86_64.rpmsudo 
+rpm -i cuda-repo-opensuse15-12-3-local-12.3.2_545.23.08-1.x86_64.rpm
+sudo zypper refresh
+sudo zypper install -y cuda-toolkit-12-3

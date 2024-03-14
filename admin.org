@@ -10,7 +10,112 @@ Se desarmo porque habia un problema con un cooler
 ** ----------------------------------------
 * TODOs Tareas cortas.
 ** TODO [2024-03-14 Thu] yakaira 10.11.12.60-59 no se puede acceder
-* Deteccion de problemas. Largo plazo
+* TODOs Largo plazo
+**  TODO [2024-03-14 Thu] Colocacion disco 4Tb en grial para backups
+**  TODO [2024-03-14 Thu] Pruebas de backups con distintas aplicaciones
+*** Posibles aplicaciones
+tar
+rsync
+rdiff-backup
+rsnapshot
+restic
+borgbackup borweb
+
+**** tar
+#+BEGIN_SRC bash :session :results output
+#!/bin/sh
+DATA=/backup/correo
+LASTFULL=$DATA/full.tgz
+SOURCE=/home
+TODAY=`date “+%Y-%m-%d_%a”`
+LASTDATE=`stat -c %y $LASTFULL`
+DEST=$DATA/i$TODAY.tgz
+
+# Borrar el incremental existente (si existe)
+/bin/rm -f $DATA/i*
+
+# Crear incremental
+/bin/tar -chz –newer “$LASTDATE” -f $DEST $SOURCE
+
+#+END_SRC
+
+**** rdiff-backup
+#+BEGIN_SRC bash :session :results output
+#!/bin/bash
+# 
+# Add to /etc/crontab:
+# 30 3 * * 2,5  /home/pulido/bin/backuphome &> /var/log/bkp/`date +%m%d-%H%M`.log
+# Correr crontab /etc/crontab????
+
+# -------------
+# CONFIG
+# -------------
+
+TIMESTAMP=`date +%m%d_%H%M`
+
+# Backup Destination is a mounted partition on /mnt/ypy_3/backup (evito el lost+found haciendo 1 x 1 de paso se organiza mejor el rdiff?
+DST2="/mnt/ypy2_4/backup/gica-rdiff-backup"
+
+# The directory to backup
+SRC2="/home/gica"
+
+# How long to keep backup history
+# In this case, the user can recover the backup state as it was 6 months ago (maxage)
+MAXAGE="3M"
+
+# Path to rdiff-backup binary
+RDIFF="/usr/local/rdiff-backup/bin/rdiff-backup"
+
+# Log file directory - needs to be created
+LOG="/var/log/bkp"
+
+# Some basic configuration options; see the manual
+OPTIONS="--print-statistics"
+
+# ---------------
+# BACKUP
+# ---------------
+
+echo " -- $TIMESTAMP -- "
+
+#if [ ! -d $DST ]
+#then
+#        touch $LOG/err.log
+#        echo "$TIMESTAMP Invalid DST, will create... " >> /var/log/bkp/err.log
+#        mkdir $DST
+#fi
+#
+#if [ ! -d $SRC ]
+#then
+#        touch $LOG/err.log
+#        echo "$TIMESTAMP Invalid SRC, aborting... " >> /var/log/bkp/err.log
+#        mount $DISK -o remount,ro
+#        exit 1
+#fi
+
+echo "Backup: $RDIFF $OPTIONS $SRC $DST"
+
+# GICA
+sudo -u gica $RDIFF $OPTIONS $SRC2 $DST2
+# It went well, remove stuff older than MAXAGE
+if [ $? -eq 0 ]; then
+        sudo -u gica $RDIFF --force --remove-older-than $MAXAGE $DST2
+else
+        echo $? > $LOG/fail$TIMESTAMP.log
+fi
+
+
+
+echo "-- EOF --"
+
+
+#+END_SRC
+
+
+
+
+** TODO [2024-03-14 Thu] Generacion de venv general con todas las aplicaciones.
+* Deteccion de problemas.
 ** TODO [2024-03-13 Wed] La red 10.11.13.x se accede desde la 10.11.12.x
 deberia ser privada?
 Lo que esta sucediendo es que se accede a la 13 desde la 12 por el port forwarding y desde la 12 a la 13 por lo que no son redes independientes y se saturan entre si.
@@ -19,7 +124,15 @@ https://serverfault.com/questions/877449/how-to-forbid-forwarding-packets-to-pri
 iptables -A FORWARD -o eth0 -j REJECT
 (hay que decirle que no haga FORWARD desde la placa de la red 13
 
-** TODO [2024-03-14 Thu] Generacion de venv general con todas las aplicaciones.
+** TODO [2024-03-14 Thu] Problemas en gpu grial4
+RuntimeError: CUDA error: an illegal memory access was encountered
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+En principio esto es porque se queda sin memoria, lo raro es que no deberia quedarse sin memoria??? Se puede probar con:
+torch.cuda.empty_cache()
+pero se pierde performance
 * Reportes
 ** [2024-03-14 Thu] Instalacion grial4
 blabla
