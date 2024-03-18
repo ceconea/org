@@ -10,6 +10,10 @@ Se desarmo porque habia un problema con un cooler
 ** ----------------------------------------
 * TODOs Tareas cortas.
 ** TODO [2024-03-14 Thu] yakaira 10.11.12.60-59 no se puede acceder
+** TODO [2024-03-15 Fri] grial4 10.11.12.7 problemas memoria GPU
+probe con
+export CUDA_LAUNCH_BLOCKING=1
+para ver si sigue dando el error
 * TODOs Largo plazo
 **  TODO [2024-03-14 Thu] Colocacion disco 4Tb en grial para backups
 **  TODO [2024-03-14 Thu] Pruebas de backups con distintas aplicaciones
@@ -110,7 +114,6 @@ echo "-- EOF --"
 
 
 #+END_SRC
-
 
 
 
