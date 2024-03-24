@@ -11,17 +11,15 @@ Se desarmo porque habia un problema con un cooler
 * TODOs Tareas cortas.
 ** TODO [2024-03-14 Thu] yakaira 10.11.12.60-59 no se puede acceder
 ** TODO [2024-03-15 Fri] grial4 10.11.12.7 problemas memoria GPU
-probe con
-export CUDA_LAUNCH_BLOCKING=1
-para ver si sigue dando el error
 * TODOs Largo plazo
-**  TODO [2024-03-14 Thu] Colocacion disco 4Tb en grial para backups
-**  TODO [2024-03-14 Thu] Pruebas de backups con distintas aplicaciones
+** TODO [2024-03-14 Thu] Colocacion disco 4Tb en grial para backups
+** TODO [2024-03-14 Thu] Pruebas de backups con distintas aplicaciones
 *** Posibles aplicaciones
 tar
 rsync
 rdiff-backup
 rsnapshot
+amanda
 restic
 borgbackup borweb
 
@@ -116,8 +114,24 @@ echo "-- EOF --"
 #+END_SRC
 
 
-
 ** TODO [2024-03-14 Thu] Generacion de venv general con todas las aplicaciones.
+** TODO [2024-03-16 Sat] Redefinicion de las redes
+10.11.12. 1-10 grials
+10.11.12.11-20 ypy, huayra, ysyry etc
+10.11.12.20-30 pcs
+10.11.12.30-40 laptops
+10.11.12.40-50 laptops visitas
+10.11.12.100   huayra super
+10.11.12.150   huayra siasa
+10.11.12.200   sun
+10.11.12.230-254 switches/ups/impresoras
+
+Replicar en la red 13 (excepto las maquinas que no estan conectadas).
+
+nombres: sun2 sun_ib2, sun_nf2 ?
+
+Si quisieramos mandar el trafico de calculo y nfs por la red 13? como lo forzamos? y solo la 12 para acceso.
+
 * Deteccion de problemas.
 ** TODO [2024-03-13 Wed] La red 10.11.13.x se accede desde la 10.11.12.x
 deberia ser privada?
@@ -136,7 +150,36 @@ Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
 En principio esto es porque se queda sin memoria, lo raro es que no deberia quedarse sin memoria??? Se puede probar con:
 torch.cuda.empty_cache()
 pero se pierde performance
-* Reportes
+
+probe con
+export CUDA_LAUNCH_BLOCKING=1
+para ver si sigue dando el error
+
+* Reportes Rodrigo
+* Reportes Manuel
+** [2024-03-23 Sat] NIS con firewalld
+
+** [2024-03-23 Sat] Evitar el forwarding a la red 10.11.13
+iptables -A FORWARD -d 10.11.13.0/24 -j REJECT
+
+https://medium.com/skilluped/what-is-iptables-and-how-to-use-it-781818422e52
+iptables -L
+systemctl disable --now firewalld.
+https://forums.opensuse.org/t/make-current-iptables-persistent/27753
+https://ghost.pegasi.fi/wiki/doku.php?id=tips_and_howtos:opensuse_iptables
+Explica como hacer persistente las reglas de iptables
+https://ghost.pegasi.fi/wiki/doku.php?id=tips_and_howtos:opensuse_iptables
+
+https://unix.stackexchange.com/questions/493275/firewalld-to-allow-routing-without-nat-between-nics
+firewall-cmd --permanent --direct --add-rule ipv4 filter FORWARD 0 -i eth1 -o eth2  -j ACCEPT
+firewall-cmd --permanent --direct --add-rule ipv4 filter FORWARD 0 -i eth2 -o eth1  -j ACCEPT
+limit the forwarding to SSH, HTTPS and HTTP ports. I
+
 ** [2024-03-14 Thu] Instalacion grial4
 blabla
 
+** [2024-03-16 Sat] Borro placa externa yakaira
+
+│10.40.60.207▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ /24▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ yakaira▒▒▒▒▒▒▒▒▒▒▒▒
+
+la remuevo porque no encuentra el proxy para instalar con el pip
