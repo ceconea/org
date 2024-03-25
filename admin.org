@@ -1,6 +1,16 @@
 * Administracion CECONEA
 #+STARTUP: overview
 * Actividades
+** [2024-03-25 Mon] Instalacion backup rdiff-backup
+zypper in rdiff-backup
+script/rdiff_backup_home.sh
+
+Agregar en el /etc/crontad:
+0 4 * * 0 root /home/pulido/bin/rdiff_backup_home.sh
+
+Aunque no hace falta reneuvo el cron:
+systemctl status cron.service
+
 ** TODO [2024-03-13 Wed] Definicion de la red infiniband
 ** [2024-03-12 Tue] Baterias UPS APC
 Se cambiaron las baterias.
@@ -22,6 +32,7 @@ rsnapshot
 amanda
 restic
 borgbackup borweb
+BackupPC.
 
 **** tar
 #+BEGIN_SRC bash :session :results output
@@ -42,6 +53,27 @@ DEST=$DATA/i$TODAY.tgz
 #+END_SRC
 
 **** rdiff-backup
+https://rdiff-backup.net/examples.html
+
+
+
+
+I take it you are backing up a tarball which lives in a directory? if so, you'll have to restore the full file at some point in time. It usually works like:
+
+rdiff-backup -r time file /destination/directory
+
+so, for example, say you are trying to recover what's in a directory called example from your rdiff root dir:
+
+cd /dir/of/rdiff/backup
+
+rdiff-backup -r 3D example /tmp/newcopy
+
+and it'll get you the copy as from 3 days ago and put it in /tmp/newcopy
+
+read the man page, section RESTORING.
+
+https://stackoverflow.com/questions/14500183/in-python-can-i-call-the-main-of-an-imported-module
+
 #+BEGIN_SRC bash :session :results output
 #!/bin/bash
 # 
@@ -112,7 +144,6 @@ echo "-- EOF --"
 
 
 #+END_SRC
-
 
 ** TODO [2024-03-14 Thu] Generacion de venv general con todas las aplicaciones.
 ** TODO [2024-03-16 Sat] Redefinicion de las redes
