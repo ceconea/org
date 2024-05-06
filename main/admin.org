@@ -205,6 +205,11 @@ para ver si sigue dando el error
     Estraer una placa de red infiniband de alguna de las 3 supermicros fuera
     de funcionamiento y colocarsela a SUPER 14 (xx.xx.12.146)
 ***1
+** DONE [2024-03-15 Mon] Restart infiniban
+   Para relavantar infiniband:
+   1. ip addr add xx.xx.xx.x dev ib0 #solo si no reconoce su ip
+   2. systemctl restart opensm 
+   
 * Reportes Manuel
 ** [2024-03-23 Sat] NIS con firewalld
 
