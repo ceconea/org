@@ -187,6 +187,24 @@ export CUDA_LAUNCH_BLOCKING=1
 para ver si sigue dando el error
 
 * Reportes Rodrigo
+** TODO [2024-03-15 Fri] Supermicros. Revisión de configuraciones de red
+   Hay que estandarizar las configuraciones de red. Hay algunas que en
+   Firewall > Interfaces > eth0 y eth 1 están en 'public'.
+   Se cambio de public a trusted:
+   * super 7, super 9
+*** DONE [2024-03-15 Fri] Supermicros. Supención automática.
+   Revisar suspención automática en super 10, 12, 14, 7.
+*** DONE [2024-03-15 Fri] Supermicros fuera de funcionamiento
+   SUPER 20, SUPER 18, SUPER 16
+*** TODO [2024-03-15 Fri] Super 14 problemas con Firewall
+    Firewall_end --start failed
+    Firewall --get zones failed
+    Así arroja varios errores
+*** TODO [2024-03-15 Fri] Super 12 problemas para cargar el home
+*** TODO [2024-03-21 Fri] Extraer placa infiniband
+    Estraer una placa de red infiniband de alguna de las 3 supermicros fuera
+    de funcionamiento y colocarsela a SUPER 14 (xx.xx.12.146)
+***1
 * Reportes Manuel
 ** [2024-03-23 Sat] NIS con firewalld
 
