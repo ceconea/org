@@ -189,9 +189,6 @@ para ver si sigue dando el error
 * Reportes Rodrigo
 * Reportes Manuel
 
-
-
-
 ** [2024-04-19 Fri] test ftp y http
 http://speedtest.tele2.net/
 
