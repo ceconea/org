@@ -188,6 +188,96 @@ para ver si sigue dando el error
 
 * Reportes Rodrigo
 * Reportes Manuel
+
+
+
+
+** [2024-04-19 Fri] test ftp y http
+http://speedtest.tele2.net/
+
+
+sun:~$ wget -O /dev/null http://speedtest.tele2.net/10MB.zip
+--2024-04-19 09:28:08--  http://speedtest.tele2.net/10MB.zip
+Resolving speedtest.tele2.net (speedtest.tele2.net)... 90.130.70.73, 2a00:800:1010::1
+Connecting to speedtest.tele2.net (speedtest.tele2.net)|90.130.70.73|:80...
+
+sun:~$ ftp ftp://speedtest.tele2.net
+Trying 90.130.70.73:21 ...
+Connected to speedtest.tele2.net.
+220 Welcome to BCK FTP service.
+331 Please specify the password.
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+200 Switching to Binary mode.
+ftp> ls
+229 Entering Extended Passive Mode (|||23059|).
+
+sun:~$ ftp ftp://test.rebex.net/
+Connected to test.rebex.net.
+220 Rebex FTP Server ready.
+331 Password required for 'anonymous'.
+230 User 'anonymous' logged in.
+Remote system type is Win32NT.
+200 'TYPE' OK.
+ftp> ls
+229 Entering Extended Passive Mode (|||1034|)
+
+*** con puestos abiertos
+
+sun:~$ ping 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=114 time=14.6 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=114 time=14.4 ms
+
+sun:~$ ftp ftp://test.rebex.net/
+Connected to test.rebex.net.
+220 Rebex FTP Server ready.
+331 Password required for 'anonymous'.
+230 User 'anonymous' logged in.
+Remote system type is Win32NT.
+200 'TYPE' OK.
+ftp> ls
+229 Entering Extended Passive Mode (|||1045|)
+125 Data connection already open; starting 'ASCII' transfer.
+drwx------ 2 anonymous users          0 Mar 31  2023 pub
+-rw------- 1 anonymous users        379 Sep 19  2023 readme.txt
+226 Transfer complete.
+
+sun:~$ wget -O /dev/null http://speedtest.tele2.net/10MB.zip
+--2024-04-19 10:13:56--  http://speedtest.tele2.net/10MB.zip
+Connecting to 10.40.1.254:3128... connected.
+Proxy request sent, awaiting response... 200 OK
+Length: 10485760 (10M) [application/zip]
+Saving to: ‘/dev/null’
+
+/dev/null              15%[==>                    ]   1.57M  45.4KB/s    eta 4m 10s
+
+Prueba con proxy y el dataset MERRA
+https://d2b3c3wh8s6en5.cloudfront.net/s3-1f9855127b9284f7b00b31754cfd6e15/gesdisc-cumulus-prod-protected.s3.us-west-2.amazonaws.com/MERRA2/M2I3NPASM.5.12.4/1980/01/MERRA2_100.inst3_3d_asm_Np.19800101.nc4?A-userid=pulido&Expires=1713538753&Signature=sf6DJXrKRMACSIO6NJx2AGziS8b6fSaw3QYvq1i4YFpsmkba6moPXoQ3c1Ze3iPR-uEdQxappRUd~wFUrgCw~YX~5HOj0iwAIUhjnh~OBXtJOdCU0wW6ed2cQ3wspVue~8sikUU~GL4C6WgrUCp8cve~H66BvFpBiEuxV0FmRaU6QqFV-GfMvaDAJlNjsxMXFzgh2sBX5GAFhx1hC80u5K43b~wBfqwRnv1tpbJ5jwV37EPAP-~Zq-Px~qb57QrWjzCW83G~cwNnnuPILjX9Jge3DS0qqHEoJ9p1rHKtVjp3ezzMEqC8fzTMm3m2mnHTVKchBCobW6UmQyPYPaJWXw__&Key-Pair-Id=KWW1M1QBBXTEK
+me lo deniega
+
+** [2024-03-27 Wed] puertos sun 
+Para la IP 200.45.54.94 los puertos abiertos a la fecha son los siguientes:
+
+RTelecomNew#sh  access-lists TELCO-IN | IN 200.45.54.94
+    3040 permit tcp any host 200.45.54.94 eq www (76098157 matches)
+    3050 permit tcp any host 200.45.54.94 eq 22 (1771906090 matches)
+    3060 permit tcp any eq 22 host 200.45.54.94 (1723125 matches)
+    3070 permit tcp any host 200.45.54.94 eq ftp (19011 matches)
+    3080 permit tcp any host 200.45.54.94 eq ftp-data (1754 matches)
+    3090 permit tcp any host 200.45.54.94 eq smtp (14691 matches)
+    3100 permit tcp any host 200.45.54.94 eq 69 (915 matches)
+    3110 permit tcp any host 200.45.54.94 eq pop3 (5378 matches)
+    3120 permit tcp any host 200.45.54.94 eq 115 (790 matches)
+    3130 permit udp any host 200.45.54.94 eq tftp (2646 matches)
+    3140 permit udp any eq ntp host 200.45.54.94 (84380 matches)
+RTelecomNew#
+
+A ese listado,se agregan estas entradas:
+
+    3085 permit tcp any eq ftp host 200.45.54.94  
+    3086 permit tcp any eq ftp-data  host 200.45.54.94 
 ** [2024-03-23 Sat] NIS con firewalld
 
 ** [2024-03-23 Sat] Evitar el forwarding a la red 10.11.13
@@ -212,5 +302,7 @@ blabla
 ** [2024-03-16 Sat] Borro placa externa yakaira
 
 │10.40.60.207▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ /24▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ yakaira▒▒▒▒▒▒▒▒▒▒▒▒
-
+2
 la remuevo porque no encuentra el proxy para instalar con el pip
+
+** [2024-04-17 Wed] Vuelvo a conectar yakaira a la 10.40.60.x
