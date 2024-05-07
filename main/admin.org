@@ -187,6 +187,40 @@ export CUDA_LAUNCH_BLOCKING=1
 para ver si sigue dando el error
 
 * Reportes Rodrigo
+** TODO [2024-03-15 Fri] Supermicros. Revisión de configuraciones de red
+   Hay que estandarizar las configuraciones de red. Hay algunas que en
+   Firewall > Interfaces > eth0 y eth 1 están en 'public'.
+   Se cambio de public a trusted:
+   * super 7, super 9
+*** DONE [2024-03-15 Fri] Supermicros. Supención automática.
+   Revisar suspención automática en super 10, 12, 14, 7.
+*** DONE [2024-03-15 Fri] Supermicros fuera de funcionamiento
+   SUPER 20, SUPER 18, SUPER 16
+*** TODO [2024-03-15 Fri] Super 14 problemas con Firewall
+    Firewall_end --start failed
+    Firewall --get zones failed
+    Así arroja varios errores
+*** TODO [2024-03-15 Fri] Super 12 problemas para cargar el home
+*** TODO [2024-03-21 Fri] Extraer placa infiniband
+    Estraer una placa de red infiniband de alguna de las 3 supermicros fuera
+    de funcionamiento y colocarsela a SUPER 14 (xx.xx.12.146)
+***1
+** DONE [2024-03-15 Mon] Restart infiniban
+   Para relavantar infiniband:
+   1. ip addr add xx.xx.xx.x dev ib0 #solo si no reconoce su ip
+   2. systemctl restart opensm 
+   
+** TODO [2024-22-04 Mon] Reportes SUN
+*** SUN 03 no muestra salida por pantalla
+*** TODO SUN 04 muestra problemas con la BIOS
+*** SUN 05 ocupada por otras áreas de la facultad
+*** SUN 06 ocupada por otras áreas de la facultad
+*** DONE SUN 07: instalacion de openSUSE 15.5 Leap
+   ip address: 10.11.12.107
+**** Otras configuraciones
+    Esperando instrucciones
+    ¿copiar de LASUNG?
+
 * Reportes Manuel
 
 ** [2024-04-19 Fri] test ftp y http
