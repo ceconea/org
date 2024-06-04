@@ -20,7 +20,7 @@
 | grial2 | computo              | i7/6c/GPU/64gb   |   10.11.12.2 |              |       |                    |
 | grial3 | computo              | i7/8c/GPU/128gb  |   10.11.12.3 |              |       |                    |
 | ypy    | almacenamiento       | SuperMicro-24d   |   10.11.12.4 | /mnt/ypy_1   | 22Tb  | simul (lleno)      |
-| ypy2   | almacenamiento       | i7               |   10.11.12.5 | /mnt/ypy2_1  | 7.2Tb | ERA-ECMWF          |
+# | ypy2   | almacenamiento       | i7               |   10.11.12.5 | /mnt/ypy2_1  | 7.2Tb | ERA-ECMWF          |
 |        |                      |                  |              | /mnt/ypy2_2  | 7.2Tb | MERRA-NASA         |
 | ypy3   | almacenamiento       | i7               |   10.11.12.6 | /mnt/ypy3_1  | TBC   | RADAR/SIMULACIONES |
 |        |                      |                  |              | /mnt/ypy3_2  | TBC   |                    |
@@ -48,6 +48,44 @@
 |----------+-----------------+------------------+--------------+--------------+-----------------------------|
 
 
+*** Servidores con GPU
+|---------+------------------+----------------+-------------------+--------------+--------------+---------------|
+| Nick    | Tipo de servidor | Especificación | Especifiación GPU |   IP interna | IP externa   | Función       |
+|---------+------------------+----------------+-------------------+--------------+--------------+---------------|
+| ysyry2  | computo          | AMD/16c/256GB  | 2 x 46GB          | 10.11.12.119 | xx.xx.xx.xx  | PYTHON/F90/ML |
+| ysyry   | computo          | AMD/16c/256GB  | 2 x 46GB          | 10.11.12.118 | xx.xx.xx.xx  | PYTHON/F90/ML |
+| yakaira | computo          | i7/4c/64GB     | 1 x 11GB          |  10.11.12.60 | 10.40.60.207 | PYTHON/F90/ML |
+| xumuc   | computo          | i5/6c/32GB     | 1 x 11GB          |  10.11.12.73 | xx.xx.xx.xx  | PYTHON/F90/ML |
+|---------+------------------+----------------+-------------------+--------------+--------------+---------------|
+
+*** Servidores Supermicros
+|-----------+------------------+----------------+--------------+------------+------------+-----------+-------------------|
+| Nick      | Tipo de servidor | Especificación |   IP interno |  IP red 13 | Infiniband | Capacidad | # Comentarios     |
+|-----------+------------------+----------------+--------------+------------+------------+-----------+-------------------|
+| huayra *  | Computo          | CPU            |    10.11.12. | 10.11.12.1 | Sí         |           | # <!--super 1-->  |
+| huayra 21 | Computo          | CPU            | 10.11.12.141 | 10.11.12.1 | Sí         |           | # <!--super 2-->  |
+| huayra *  | Computo          | CPU            |    10.11.12. | 10.11.12.1 | Sí         |           | # <!--super 3-->  |
+| huayra *  | Computo          | CPU            |    10.11.12. | 10.11.12.1 | Sí         |           | # <!--super 4-->  |
+| huayra *  | Computo          | CPU            |    10.11.12. | 10.11.12.1 | Sí         |           | # <!--super 5-->  |
+| huayra *  | Computo          | CPU            |    10.11.12. | 10.11.12.1 | Sí         |           | # <!--super 6-->  |
+| huayra 13 | Computo          | CPU            | 10.11.12.134 | 10.11.12.1 | Sí         |           | # <!--super 7-->  |
+| huayra *  | Computo          | CPU            |   10.11.12.1 | 10.11.12.1 | Sí         |           | # <!--super 8-->  |
+| huayra 14 | Computo          | CPU            | 10.11.12.135 | 10.11.12.1 | Sí         |           | # <!--super 9-->  |
+| huayra 22 | Computo          | CPU            | 10.11.12.142 | 10.11.12.1 | Sí         |           | # <!--super 10--> |
+| huayra 15 | Computo          | CPU            | 10.11.12.136 | 10.11.12.1 | Sí         |           | # <!--super 11--> |
+| huayra 23 | Computo          | CPU            | 10.11.12.143 | 10.11.12.1 | Sí         |           | # <!--super 12--> |
+| huayra 16 | Computo          | CPU            | 10.11.12.137 | 10.11.12.1 | Sí         |           | # <!--super 13--> |
+| huayra 26 | Computo          | CPU            | 10.11.12.146 | 10.11.12.1 | Sí         |           | # <!--super 14--> |
+| huayra 17 | Computo          | CPU            | 10.11.12.138 | 10.11.12.1 | Sí         |           | # <!--super 15--> |
+| huayra ** | Computo          | CPU            |    10.11.12. | 10.11.12.1 | Sí         |           | # <!--super 16--> |
+| huayra 18 | Computo          | CPU            | 10.11.12.139 | 10.11.12.1 | Sí         |           | # <!--super 17--> |
+| huayra ** | Computo          | CPU            |    10.11.12. | 10.11.12.1 | Sí         |           | # <!--super 18--> |
+| huayra 19 | Computo          | CPU            | 10.11.12.140 | 10.11.12.1 | Sí         |           | # <!--super 19--> |
+| huayra ** | Computo          | CPU            |    10.11.12. | 10.11.12.1 | Sí         |           | # <!--super 20--> |
+|-----------+------------------+----------------+--------------+------------+------------+-----------+-------------------|
+ # Las huayra con * no fueron instaladas aún
+ # Las huayra con ** están fuera de funcionamiento 
+
 *** Servidores de almacenamiento. Datos
 
 |-------+--------------+--------+---------------+----------------|
@@ -59,7 +97,7 @@
 |       | /mnt/grial_3 | 800Gb  | back up       | No             |
 |       | /mnt/grial_4 | 17.2Tb | back up       | No             |
 | ypy   | /mnt/ypy_1   | 22.0Tb | simul (lleno) | No             |
-| ypy2  | /mnt/ypy2_1  | 7.2Tb  | ERA-ECMWF     | Solo lectura   |
+# | ypy2  | /mnt/ypy2_1  | 7.2Tb  | ERA-ECMWF     | Solo lectura   |
 |       | /mnt/ypy2_2  | 7.2Tb  | MERRA-NASA    | Lectura        |
 | ypy3  | /mnt/ypy3_1  | TBC    | RADAR         | Lectura        |
 |       | /mnt/ypy3_2  | TBC    | simulaciones  | Libre          |
