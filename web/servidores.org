@@ -9,130 +9,118 @@
 
 ** Definicion estructura servidores de computo y almacenamiento
 
-|--------+----------------------+------------------+--------------+--------------+-------+--------------------|
-| Nick   | Tipo servidor        | Especificicacion |   IP interno | NFS          | Capac |                    |
-|--------+----------------------+------------------+--------------+--------------+-------+--------------------|
-| sun    | publico 200.45.54.94 | sun opteron      | 10.11.12.101 |              |       |                    |
-| grial  | central/computo      | i9/10c/GPU/128gb |   10.11.12.1 | /home        | 800gb |                    |
-|        | NIS/DHCP/HOME        |                  |              | /mnt/grial_1 | 3.4Tb | simulaciones       |
-|        | Red Salida           |                  |              | /mnt/grial_2 | 3.4Tb | simulaciones       |
-|        | 10.40.60.228         |                  |              | /mnt/grial_3 | 800Gb | simulaciones       |
-| grial2 | computo              | i7/6c/GPU/64gb   |   10.11.12.2 |              |       |                    |
-| grial3 | computo              | i7/8c/GPU/128gb  |   10.11.12.3 |              |       |                    |
-| ypy    | almacenamiento       | SuperMicro-24d   |   10.11.12.4 | /mnt/ypy_1   | 22Tb  | simul (lleno)      |
-| ypy2   | almacenamiento       | i7               |   10.11.12.5 | /mnt/ypy2_1  | 7.2Tb | ERA-ECMWF          |
-|        |                      |                  |              | /mnt/ypy2_2  | 7.2Tb | MERRA-NASA         |
-| ypy3   | almacenamiento       | i7               |   10.11.12.6 | /mnt/ypy3_1  | TBC   | RADAR/SIMULACIONES |
-|        |                      |                  |              | /mnt/ypy3_2  | TBC   |                    |
-|--------+----------------------+------------------+--------------+--------------+-------+--------------------|
+|--------+-----------------+------------------+--------------+--------------+-------+--------------------|
+| Nick   | Tipo servidor   | Especificicacion |   IP interno | NFS          | Capac |                    |
+|--------+-----------------+------------------+--------------+--------------+-------+--------------------|
+| sun    | publico         | sun opteron      | 10.11.12.101 |              |       |                    |
+| grial  | central/computo | i9/10c/128gb     |   10.11.12.1 | /home        | 800gb |                    |
+|        | NIS/DHCP/HOME   |                  |              | /mnt/grial_1 | 3.4Tb | simulaciones       |
+|        | Red Salida      |                  |              | /mnt/grial_2 | 3.4Tb | simulaciones       |
+|        | 10.40.60.228    |                  |              | /mnt/grial_3 | 800Gb | simulaciones       |
+| grial2 | computo         | i7/6c/GPU/64gb   |   10.11.12.2 |              |       |                    |
+| grial3 | computo         | i7/8c/GPU/128gb  |   10.11.12.3 |              |       |                    |
+| ypy    | almacenamiento  | SuperMicro-24d   |   10.11.12.4 | /mnt/ypy_1   | 22Tb  | simul (lleno)      |
+|        |                 |                  |              | /mnt/ypy2_2  | 7.2Tb | MERRA-NASA         |
+| ypy3   | almacenamiento  | i7               |   10.11.12.6 | /mnt/ypy3_1  | TBC   | RADAR/SIMULACIONES |
+|        |                 |                  |              | /mnt/ypy3_2  | TBC   |                    |
+|--------+-----------------+------------------+--------------+--------------+-------+--------------------|
+# | ypy2   | almacenamiento       | i7               |   10.11.12.5 | /mnt/ypy2_1  | 7.2Tb | ERA-ECMWF          |
 
 
-*** Servidores 
+*** Servidores centrales
 
-|----------+-----------------+------------------+--------------+--------------+-----------------------------|
-| Nick     | Tipo servidor   | Especificicacion |   IP interno |   IP externo | Funcion                     |
-|----------+-----------------+------------------+--------------+--------------+-----------------------------|
-| sun      | publico         | sun opteron      | 10.11.12.101 | 200.45.54.94 | SSH/VPN/HTTP/GIT            |
-| grial    | central/computo | i9/10c/GPU/128gb |   10.11.12.1 | 10.40.60.228 | NIS/DHCP/HOME/PYTHON/F90/ML |
-| grial2   | computo         | i7/6c/GPU/64gb   |   10.11.12.2 |              | PYTHON/F90/ML               |
-| grial3   | computo         | i7/8c/GPU/128gb  |   10.11.12.3 |              | PYTHON/F90/ML               |
-| ypy      | almacenamiento  | SuperMicro-24d   |   10.11.12.4 | 10.40.60.229 | NFS                         |
-| ypy2     | almacenamiento  | i7               |   10.11.12.5 |              | NFS                         |
-| ypy3     | almacenamiento  | i7               |   10.11.12.6 |              | NFS                         |
-|----------+-----------------+------------------+--------------+--------------+-----------------------------|
-| sun02-11 | cluster computo | sun-Opteron      |      101-112 |              | F90/MPI                     |
-|----------+-----------------+------------------+--------------+--------------+-----------------------------|
-| huayra   | cluster computo | ARM-Xeon         |      121-129 |              | F90/MPI                     |
-|----------+-----------------+------------------+--------------+--------------+-----------------------------|
-| huayra   | Cluster computo | Supermicro-Xeon  |      131-146 |              | En mantenimiento Update SO  |
-|----------+-----------------+------------------+--------------+--------------+-----------------------------|
+|-------+---------+------------------+--------------+--------------+-----------------------------|
+| Nick  | Tipo    | Especificicacion |   IP interno |   IP externo | Funcion                     |
+|-------+---------+------------------+--------------+--------------+-----------------------------|
+| sun   | publico | sun opteron      | 10.11.12.101 | 200.45.54.94 | SSH/VPN/HTTP/GIT            |
+| grial |         | i9/10c/128gb     |   10.11.12.1 | 10.40.60.228 | NIS/DHCP/HOME/PYTHON/F90/ML |
+|-------+---------+------------------+--------------+--------------+-----------------------------|
 
+# 
+# | ypy      | almacenamiento  | SuperMicro-24d   |   10.11.12.4 | 10.40.60.229 | NFS                         |
+# | ypy2     | almacenamiento  | i7               |   10.11.12.5 |              | NFS                         |
+# | ypy3     | almacenamiento  | i7               |   10.11.12.6 |              | NFS                         |
+# |----------+-----------------+------------------+--------------+--------------+-----------------------------|
+# | sun02-11 | cluster computo | sun-Opteron      |      101-112 |              | F90/MPI                     |
+# |----------+-----------------+------------------+--------------+--------------+-----------------------------|
+# | huayra   | cluster computo | ARM-Xeon         |      121-129 |              | F90/MPI                     |
+# |----------+-----------------+------------------+--------------+--------------+-----------------------------|
+# | huayra   | Cluster computo | Supermicro-Xeon  |      131-146 |              | En mantenimiento Update SO  |
+# |----------+-----------------+------------------+--------------+--------------+-----------------------------|
+
+
+*** Servidores GPU
+|---------+----------------+----------+--------------+--------------+-----------|
+| Nick    | Especificación | GPU      |   IP interna | IP externa   | Función   |
+|---------+----------------+----------+--------------+--------------+-----------|
+| ysyry2  | AMD/16c/256GB  | 2 x 46GB | 10.11.12.119 | xx.xx.xx.xx  | PYTHON/ML |
+| ysyry   | AMD/16c/256GB  | 2 x 46GB | 10.11.12.118 | xx.xx.xx.xx  | PYTHON/ML |
+| yakaira | i7/4c/64GB     | 1 x 11GB |  10.11.12.60 | 10.40.60.207 | PYTHON/ML |
+| xumuc   | i5/6c/32GB     | 1 x 11GB |  10.11.12.73 | xx.xx.xx.xx  | PYTHON/ML |
+|---------+----------------+----------+--------------+--------------+-----------|
+
+*** Servidores computo serial
+
+|--------+------------------+------------+--------------+-----------------------------|
+| Nick   | Especificicacion | IP interno |   IP externo | Funcion                     |
+|--------+------------------+------------+--------------+-----------------------------|
+| grial  | i9/10c/128GB     | 10.11.12.1 | 10.40.60.228 | NIS/DHCP/HOME/PYTHON/F90/ML |
+| grial2 | i7/6c/64GB       | 10.11.12.2 |              | PYTHON/F90/ML               |
+| grial3 | i7/8c/GPU/128GB  | 10.11.12.3 |              | PYTHON/F90/ML               |
+|--------+------------------+------------+--------------+-----------------------------|
+
+*** Servidores Supermicros: computo paralelo 
+|-----------+----------------------+--------------+------------+-------------+-----------+-------------------|
+| Nick      | Especificación       |   IP interno |  IP red 13 |  Infiniband | Capacidad | # Comentarios     |
+|-----------+----------------------+--------------+------------+-------------+-----------+-------------------|
+| huayra *  |                      |    10.11.12. | 10.11.13.1 |             |           | # <!--super 1-->  |
+| huayra 21 | i-Xeon/24CPU/6c/32GB | 10.11.12.141 | 10.11.13.1 |  10.11.14.2 | 931,5 GB  | # <!--super 2-->  |
+| huayra *  |                      |    10.11.12. | 10.11.13.1 |             |           | # <!--super 3-->  |
+| huayra *  |                      |    10.11.12. | 10.11.13.1 |             |           | # <!--super 4-->  |
+| huayra *  |                      |    10.11.12. | 10.11.13.1 |             |           | # <!--super 5-->  |
+| huayra *  |                      |    10.11.12. | 10.11.13.1 |             |           | # <!--super 6-->  |
+| huayra 13 | i-Xeon/24CPU/6c/32GB | 10.11.12.134 | 10.11.13.1 |  10.11.14.5 | 465,8 GB  | # <!--super 7-->  |
+| huayra *  |                      |   10.11.12.1 | 10.11.13.1 |             |           | # <!--super 8-->  |
+| huayra 14 | i-Xeon/12CPU/6c/32GB | 10.11.12.135 | 10.11.13.1 |  10.11.14.6 | 931,5 GB  | # <!--super 9-->  |
+| huayra 22 | i-Xeon/24CPU/6c/32GB | 10.11.12.142 | 10.11.13.1 | 10.11.14.10 | 931,5 GB  | # <!--super 10--> |
+| huayra 15 | i-Xeon/12CPU/6c/32GB | 10.11.12.136 | 10.11.13.1 |  10.11.14.7 | 1,4 TB    | # <!--super 11--> |
+| huayra 23 | i-Xeon/24CPU/6c/32GB | 10.11.12.143 | 10.11.13.1 |  10.11.14.9 | 931,5 GB  | # <!--super 12--> |
+| huayra 16 | i-Xeon/24CPU/6c/64GB | 10.11.12.137 | 10.11.13.1 |  10.11.14.8 | 931,5 GB  | # <!--super 13--> |
+| huayra 26 | i-Xeon/24/6c/64GB    | 10.11.12.146 | 10.11.13.1 | 10.11.14.11 | 931,5 GB  | # <!--super 14--> |
+| huayra 17 | i-Xeon/24CPU/6c/64GB | 10.11.12.138 | 10.11.13.1 |  10.11.14.4 | 931,5 GB  | # <!--super 15--> |
+| huayra ** |                      |              |            |             |           | # <!--super 16--> |
+| huayra 18 | i-Xeon/24CPU/6c/32GB | 10.11.12.139 | 10.11.13.1 |  10.11.14.3 | 931,5 GB  | # <!--super 17--> |
+| huayra ** |                      |              |            |             |           | # <!--super 18--> |
+| huayra 19 | i-Xeon/24CPU/6c/32GB | 10.11.12.140 | 10.11.13.1 |  10.11.14.1 | 465,8 GB  | # <!--super 19--> |
+| huayra ** |                      |              |            |             |           | # <!--super 20--> |
+| huayra    | AMD/64CPU/16c/504GB  | 10.11.12.120 | 10.11.13   |             | #349,3 GB |                   |
+|-----------+----------------------+--------------+------------+-------------+-----------+-------------------|
+ # huayra *: no fueron instaladas aún
+ # huayra **: fuera de funcionamiento 
 
 *** Servidores de almacenamiento. Datos
 
-|-------+--------------+--------+---------------+----------------|
-| Nick  | NFS          | Capac  | Uso           | Disponibilidad |
-|-------+--------------+--------+---------------+----------------|
-| grial | /home        | 800gb  | home          | Max 40Gb !!!   |
-|       | /mnt/grial_1 | 3.4Tb  | simulaciones  | Libre          |
-|       | /mnt/grial_2 | 3.4Tb  | simulaciones  | Libre          |
-|       | /mnt/grial_3 | 800Gb  | back up       | No             |
-|       | /mnt/grial_4 | 17.2Tb | back up       | No             |
-| ypy   | /mnt/ypy_1   | 22.0Tb | simul (lleno) | No             |
-| ypy2  | /mnt/ypy2_1  | 7.2Tb  | ERA-ECMWF     | Solo lectura   |
-|       | /mnt/ypy2_2  | 7.2Tb  | MERRA-NASA    | Lectura        |
-| ypy3  | /mnt/ypy3_1  | TBC    | RADAR         | Lectura        |
-|       | /mnt/ypy3_2  | TBC    | simulaciones  | Libre          |
-|-------+--------------+--------+---------------+----------------|
- 
-*** <2023-05-15 Mon> Servidor Supermicro PICT2021-CAT-I-130
-
-1x AS -2024US-TRT 
-0% 3 YRS LABOR, 3 YRS PARTS, 1 YR
-2x Milan 7313 DP/UP 16C/32T 3.0G 128M
-512GB = 16x 32GB
-1x Intel 3D XPoint DC P4800X 375G PCIe3.0x4
-2x NVIDIA A40 48GB GDDR6 PCIe 4.0 - Passive Cooling---GPU-NVTA40
-1x GbE RJ45 Intel i350-AM2, Gen3 x4 LP
-
-sda           8:0    1  12.7T  0 disk 
-sdb           8:16   1  16.4T  0 disk 
-sdc           8:32   1  12.7T  0 disk 
-sdd           8:48   1  16.4T  0 disk 
-sde           8:64   1  12.7T  0 disk 
-sdf           8:80   1  16.4T  0 disk 
-sdg           8:96   1  12.7T  0 disk 
-sdh           8:112  1  12.7T  0 disk 
-sdi           8:128  1  16.4T  0 disk 
-sdj           8:144  1  12.7T  0 disk 
-sdk           8:160  1  16.4T  0 disk 
-nvme0n1     259:0    0 349.3G  0 disk 
-├─nvme0n1p1 259:1    0   327M  0 part /boot/efi
-├─nvme0n1p2 259:2    0     9G  0 part [SWAP]
-└─nvme0n1p3 259:3    0   100G  0 part /
-
-*** [2023-10-19 Thu] Servidor Supermicro Proyecto PREVENIR Japon
-
-AS-2114GT-DNR
-
-Doble Nodo.
-
-1 Con
-
-Single AMP EPYC 7313P 16C 3730 Turbo MHz 128Mb cache
-256 Gb Memory
-NVME Micron 1Tb
-NVME Samsung PM983 U2 PCI3 1.92Tb
-2x NVIDIA A40 48GB GDDR6 PCIe 4.0 - Passive Cooling---GPU-NVTA40
+|--------+---------------+--------------+--------+---------------+----------------|
+| Nick   | NFS           |   IP interno | Capac  | Uso           | Disponibilidad |
+|--------+---------------+--------------+--------+---------------+----------------|
+| grial  | /home         |   10.11.12.1 | 800gb  | home          | Max 40Gb !!!   |
+|        | /mnt/grial_1  |              | 3.4Tb  | simulaciones  | Libre          |
+|        | /mnt/grial_2  |              | 3.4Tb  | simulaciones  | Libre          |
+|        | /mnt/grial_3  |              | 800Gb  | back up       | No             |
+|        | /mnt/grial_4  |              | 17.2Tb | back up       | No             |
+| ypy    | /mnt/ypy_1    |              | 22.0Tb | simul (lleno) | No             |
+|        | /mnt/ypy2_2   |              | 7.2Tb  | MERRA-NASA    | Lectura        |
+| ypy3   | /mnt/ypy3_1   |   10.11.12.6 | TBC    | RADAR         | Lectura        |
+|        | /mnt/ypy3_2   |              | TBC    | simulaciones  | Libre          |
+|        | /mnt/ypy3_3   |              | 11 TB  |               |                |
+|        | /mnt/ypy3_5   |              | 11 TB  |               |                |
+|        | /mnt/ypy3_6   |              | 11 TB  |               |                |
+| huayra | /mnt/huayra_1 | 10.11.12.120 | 11 TB  |               |                |
+|        | /mnt/huayra_2 |              | 13 TB  |               |                |
+|        | /mnt/huayra_3 |              | 17 TB  |               |                |
+|        | /mnt/huayra_4 |              | 13 TB  |               |                |
+|        | /mnt/huayra_5 |              | 13 TB  |               |                |
+|--------+---------------+--------------+--------+---------------+----------------|
+# | ypy2  | /mnt/ypy2_1  | 7.2Tb  | ERA-ECMWF     | Solo lectura   |
 
 
-Super H12SSG-AN6
-
- Single AMD EPYC™ 7003/7002 Series Processor
-(The latest AMD EPYC™ 7003 Series Processor with AMD 3D V-Cache™ Technology requires BIOS version 2.3 or newer)
-2. 2TB Registered ECC DDR4 3200MHz SDRAM in 8 DIMMs
-3. Expansion slots:
-3 PCI-E 4.0 x16 Riser Slots,
-9 PCI-E 4.0 x8 SlimSAS,
-2 PCI-E 4.0 x4 SlimSAS,
-1 PCI-E 4.0 x16 AIOM networking slot
-M.2 Interface: 2 PCI-E 4.0 x4
-M.2 Form Factor: 2242, 2260, 2280, 22110
-M.2 Key: M-key
-4. 2 NVMe via SlimSAS,
-2 M.2
-5. Dedicated IPMI 2.0 LAN
-6. ASPEED AST2600 BMC graphics
-7. 2 USB 3.0 ports (rear)
-
-
-
-
-2  Con
-
-Single AMP EPYC 7313P 16C 3730 Turbo MHz 128Mb cache
-256 Gb Memory
-NVME Micron 1Tb
-NVME Samsung PM983 U2 PCI3 1.92Tb
-
-Sin GPU

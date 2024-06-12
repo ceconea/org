@@ -1,0 +1,79 @@
+# Hey Emacs, this is a -*- org -*- file ...
+#+TITLE:    Colaboradores de Proyecto Prevenir - CECONEA
+#+DESCRIPTION: Instrucciones basicas de uso
+#+KEYWORDS:  syntax, org, document
+
+#+SETUPFILE: /home/pulido/alm/soft/org-html-themes/org/theme-readtheorg-local.setup
+
+#+PROPERTY:  header-args :eval never-export 
+*** <2023-05-15 Mon> Servidor Supermicro PICT2021-CAT-I-130
+
+1x AS -2024US-TRT 
+0% 3 YRS LABOR, 3 YRS PARTS, 1 YR
+2x Milan 7313 DP/UP 16C/32T 3.0G 128M
+512GB = 16x 32GB
+1x Intel 3D XPoint DC P4800X 375G PCIe3.0x4
+2x NVIDIA A40 48GB GDDR6 PCIe 4.0 - Passive Cooling---GPU-NVTA40
+1x GbE RJ45 Intel i350-AM2, Gen3 x4 LP
+
+sda           8:0    1  12.7T  0 disk 
+sdb           8:16   1  16.4T  0 disk 
+sdc           8:32   1  12.7T  0 disk 
+sdd           8:48   1  16.4T  0 disk 
+sde           8:64   1  12.7T  0 disk 
+sdf           8:80   1  16.4T  0 disk 
+sdg           8:96   1  12.7T  0 disk 
+sdh           8:112  1  12.7T  0 disk 
+sdi           8:128  1  16.4T  0 disk 
+sdj           8:144  1  12.7T  0 disk 
+sdk           8:160  1  16.4T  0 disk 
+nvme0n1     259:0    0 349.3G  0 disk 
+├─nvme0n1p1 259:1    0   327M  0 part /boot/efi
+├─nvme0n1p2 259:2    0     9G  0 part [SWAP]
+└─nvme0n1p3 259:3    0   100G  0 part /
+
+*** [2023-10-19 Thu] Servidor Supermicro Proyecto PREVENIR Japon
+
+AS-2114GT-DNR
+
+Doble Nodo.
+
+1 Con
+
+Single AMP EPYC 7313P 16C 3730 Turbo MHz 128Mb cache
+256 Gb Memory
+NVME Micron 1Tb
+NVME Samsung PM983 U2 PCI3 1.92Tb
+2x NVIDIA A40 48GB GDDR6 PCIe 4.0 - Passive Cooling---GPU-NVTA40
+
+
+Super H12SSG-AN6
+
+ Single AMD EPYC™ 7003/7002 Series Processor
+(The latest AMD EPYC™ 7003 Series Processor with AMD 3D V-Cache™ Technology requires BIOS version 2.3 or newer)
+2. 2TB Registered ECC DDR4 3200MHz SDRAM in 8 DIMMs
+3. Expansion slots:
+3 PCI-E 4.0 x16 Riser Slots,
+9 PCI-E 4.0 x8 SlimSAS,
+2 PCI-E 4.0 x4 SlimSAS,
+1 PCI-E 4.0 x16 AIOM networking slot
+M.2 Interface: 2 PCI-E 4.0 x4
+M.2 Form Factor: 2242, 2260, 2280, 22110
+M.2 Key: M-key
+4. 2 NVMe via SlimSAS,
+2 M.2
+5. Dedicated IPMI 2.0 LAN
+6. ASPEED AST2600 BMC graphics
+7. 2 USB 3.0 ports (rear)
+
+
+
+
+2  Con
+
+Single AMP EPYC 7313P 16C 3730 Turbo MHz 128Mb cache
+256 Gb Memory
+NVME Micron 1Tb
+NVME Samsung PM983 U2 PCI3 1.92Tb
+
+Sin GPU
