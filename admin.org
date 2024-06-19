@@ -14,11 +14,18 @@ systemctl status cron.service
 
 ** DONE [2024-03-13 Wed] Definicion de la red infiniband
 ** DONE [2024-03-12 Tue] Baterias UPS APC
+=======
+** [2024-03-12 Tue] Baterias UPS APC
 Se cambiaron las baterias.
 ** DONE [2024-03-12 Tue] Baterias UPC EATON
 Se desarmo porque habia un problema con un cooler
 
 ** ----------------------------------------
+** DONE [2024-03-15 Fri] Instalar de coolers a yakaira
+   Se intalaron dos coolers en el reverso del gabinete-
+** DONE [2024-03-15 Fri] Instalar Grial4
+   Hay que hacer la instalación de un cooler en la cara reversa que extraiga el
+   aire calido de la GPU
 * TODOs Tareas cortas.
 ** DONE [2024-03-14 Thu] yakaira 10.11.12.60-59 no se puede acceder
 ** DONE [2024-03-15 Fri] grial4 10.11.12.7 problemas memoria GPU
@@ -216,7 +223,7 @@ para ver si sigue dando el error
    Para relavantar infiniband:
    1. ip addr add xx.xx.xx.x dev ib0 #solo si no reconoce su ip
    2. systemctl restart opensm 
-   
+      
 ** TODO [2024-22-04 Mon] Reportes SUN
 *** SUN 03 no muestra salida por pantalla
 *** TODO SUN 04 muestra problemas con la BIOS
@@ -227,7 +234,9 @@ para ver si sigue dando el error
 **** Otras configuraciones
     Esperando instrucciones
     ¿copiar de LASUNG?
-
+** TODO [2024-06-13 Thu] Reporte UPS Eaton, cambio de módulo
+   Se cambio de lugar la conexión eléctrica, pasó de UPS-1 a UPS-2.
+   Avisar a Gustavo de mantenimiento para que cambie el módulo.
 * Reportes Manuel
 
 ** [2024-04-19 Fri] test ftp y http
