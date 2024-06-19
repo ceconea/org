@@ -1,7 +1,8 @@
 * Administracion CECONEA
 #+STARTUP: overview
 * Actividades
-** [2024-03-25 Mon] Instalacion backup rdiff-backup
+** TODO [2024-06-12 Wed] Pasos a seguir para hacer update pagina web ceconea/instr 
+** DONE [2024-03-25 Mon] Instalacion backup rdiff-backup
 zypper in rdiff-backup
 script/rdiff_backup_home.sh
 
@@ -11,19 +12,25 @@ Agregar en el /etc/crontad:
 Aunque no hace falta reneuvo el cron:
 systemctl status cron.service
 
-** TODO [2024-03-13 Wed] Definicion de la red infiniband
-** [2024-03-12 Tue] Baterias UPS APC
+** DONE [2024-03-13 Wed] Definicion de la red infiniband
+** DONE [2024-03-12 Tue] Baterias UPS APC
 Se cambiaron las baterias.
-** [2024-03-12 Tue] Baterias UPC EATON
+** DONE [2024-03-12 Tue] Baterias UPC EATON
 Se desarmo porque habia un problema con un cooler
 
 ** ----------------------------------------
 * TODOs Tareas cortas.
-** TODO [2024-03-14 Thu] yakaira 10.11.12.60-59 no se puede acceder
-** TODO [2024-03-15 Fri] grial4 10.11.12.7 problemas memoria GPU
+** DONE [2024-03-14 Thu] yakaira 10.11.12.60-59 no se puede acceder
+** DONE [2024-03-15 Fri] grial4 10.11.12.7 problemas memoria GPU
 * TODOs Largo plazo
-** TODO [2024-03-14 Thu] Colocacion disco 4Tb en grial para backups
-** TODO [2024-03-14 Thu] Pruebas de backups con distintas aplicaciones
+** TODO [2024-06-15 Sat] Organizacion servidores ryzen-9 7950x
+Quizas convenga tener las cuentas y el dhcp en alguno de los servidores de computo y dejar el servidor central solo para servir los homes y los discos. ?
+
+Otra posibilidad es poner el home/discos en algun servidor moderno pero sin poder de computo i5/ryzen5 de tal manera que no lo usemos de computo sino solo para procesamiento de datos?
+
+
+** DONE [2024-03-14 Thu] Colocacion disco 4Tb en grial para backups
+** DONE [2024-03-14 Thu] Pruebas de backups con distintas aplicaciones
 *** Posibles aplicaciones
 tar
 rsync

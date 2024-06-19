@@ -77,3 +77,40 @@ NVME Micron 1Tb
 NVME Samsung PM983 U2 PCI3 1.92Tb
 
 Sin GPU
+
+*** grial3
+**** Mother prime Z490
+        Manufacturer: ASUSTeK COMPUTER INC.
+        Product Name: ROG STRIX Z490-E GAMING
+**** CPU i7
+  Model name:           Intel(R) Core(TM) i7-10700K CPU @ 3.80GHz
+    Core(s) per socket: 8
+    CPU max MHz:        5100.0000
+    CPU min MHz:        800.0000
+**** Memory    128gb
+*** grial2
+**** Mother prime Z690
+        Manufacturer: ASUSTeK COMPUTER INC.
+        Product Name: PRIME Z690-P D4
+**** CPU i7
+  Model name:            12th Gen Intel(R) Core(TM) i7-12700
+    Core(s) per socket:  12
+    CPU max MHz:         4900.0000
+    CPU min MHz:         800.0000
+**** Memory    64gb
+*** grial
+
+**** Mother prime Z590
+        Manufacturer: Gigabyte Technology Co., Ltd.
+        Product Name: Z590 AORUS ELITE
+**** CPU i9
+Model name:                      Intel(R) Core(TM) i9-10850K CPU @ 3.60GHz
+Stepping:                        5
+CPU MHz:                         5000.872
+CPU max MHz:                     5200.0000
+CPU min MHz:                     800.0000
+CPU(s):                          20
+On-line CPU(s) list:             0-19
+Thread(s) per core:              2
+Core(s) per socket:              10
+**** Memory    128gb
