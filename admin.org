@@ -27,6 +27,18 @@ Se desarmo porque habia un problema con un cooler
    Hay que hacer la instalación de un cooler en la cara reversa que extraiga el
    aire calido de la GPU
 * TODOs Tareas cortas.
+
+** TODO [2024-06-26 Wed] Automatizar el proceso de uso de jupyter en el cluster
+
+Realizar un script bash que permita realizar todo el proceso:
+
+jupy(){
+    ssh username@PC_IP_address jupyter notebook --no-browser --port=8889
+    ssh -N -L localhost:8887:localhost:8889 username@PC_IP_address
+    firefox https://localhost:8887
+}
+https://stackoverflow.com/questions/48534496/how-to-automate-initialization-of-a-remote-jupyter-notebook-on-local-machine
+
 ** DONE [2024-03-14 Thu] yakaira 10.11.12.60-59 no se puede acceder
 ** DONE [2024-03-15 Fri] grial4 10.11.12.7 problemas memoria GPU
 * TODOs Largo plazo
