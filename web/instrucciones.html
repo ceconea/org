@@ -1,220 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
 <head>
-<!-- 2023-11-16 Thu 10:04 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Instrucciones CECONEA</title>
-<meta name="author" content="Pulido" />
-<meta name="description" content="Instrucciones basicas de uso" />
-<meta name="keywords" content="syntax, org, document" />
-<meta name="generator" content="Org Mode" />
-<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/readtheorg.css"/>
-<script type="text/javascript" src="src/lib/js/jquery.min.js"></script>
-<script type="text/javascript" src="src/lib/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="src/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="src/readtheorg_theme/js/readtheorg.js"></script>
+    <!-- 2023-11-16 Thu 10:04 -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Instrucciones CECONEA</title>
+    <meta name="author" content="Pulido" />
+    <meta name="description" content="Instrucciones basicas de uso" />
+    <meta name="keywords" content="syntax, org, document" />
+    <meta name="generator" content="Org Mode" />
+    <link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/htmlize.css" />
+    <link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/readtheorg.css" />
+    <script type="text/javascript" src="src/lib/js/jquery.min.js"></script>
+    <script type="text/javascript" src="src/lib/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="src/lib/js/jquery.stickytableheaders.min.js"></script>
+    <script type="text/javascript" src="src/readtheorg_theme/js/readtheorg.js"></script>
 </head>
+
 <body>
-<div id="content" class="content">
-<h1 class="title">Instrucciones CECONEA</h1>
-<div id="table-of-contents" role="doc-toc">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
-<ul>
-<li><a href="#orgd70427e">1. Estructura del cluster</a></li>
-<li><a href="#orge7da9af">2. Instrucciones ingresar al CECONEA</a></li>
-<li><a href="#org2dcb63f">3. Ingresar directamente a la grial</a></li>
-<li><a href="#orga3fd28e">4. ssh sin claves.</a></li>
-<li><a href="#org8066cb4">5. Correr en python en background</a></li>
-<li><a href="#org2a4d097">6. screen multiplexer</a>
-<ul>
-<li><a href="#org6830e58">6.1. Los principales shortcuts de screen</a></li>
-<li><a href="#org3cb8e03">6.2. Correr simulaciones en background con screen</a></li>
-<li><a href="#orgb2851bf">6.3. Correr screen por default con el ssh</a></li>
-</ul>
-</li>
-<li><a href="#org67a6364">7. Como correr jupyter en el CECONEA</a></li>
-<li><a href="#org8756cba">8. Como correr jupyter desde el GICA</a></li>
-<li><a href="#org1c71772">9. Datos y recursos disponibles</a></li>
-<li><a href="#orgf0f7fa6">10. Virtual environment para Machine learning</a></li>
-<li><a href="#org009a1e1">11. Como conectarse con VSCODE desde windows</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgd70427e" class="outline-2">
-<h2 id="orgd70427e"><span class="section-number-2">1.</span> Estructura del cluster</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-Si se quiere ver los recursos disponibles, servidores y demas estructura:
-</p>
+    <div id="content" class="content">
+        <h1 class="title">Instrucciones CECONEA</h1>
+        <div id="table-of-contents" role="doc-toc">
+            <h2>Table of Contents</h2>
+            <div id="text-table-of-contents" role="doc-toc">
+                <ul>
+                    <li><a href="#orgd70427e">1. Estructura del cluster</a></li>
+                    <li><a href="#orge7da9af">2. Instrucciones ingresar al CECONEA</a></li>
+                    <li><a href="#org2dcb63f">3. Ingresar directamente a la grial</a></li>
+                    <li><a href="#orga3fd28e">4. ssh sin claves.</a></li>
+                    <li><a href="#org8066cb4">5. Correr en python en background</a></li>
+                    <li><a href="#org2a4d097">6. screen multiplexer</a>
+                        <ul>
+                            <li><a href="#org6830e58">6.1. Los principales shortcuts de screen</a></li>
+                            <li><a href="#org3cb8e03">6.2. Correr simulaciones en background con screen</a></li>
+                            <li><a href="#orgb2851bf">6.3. Correr screen por default con el ssh</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#org67a6364">7. Como correr jupyter en el CECONEA</a>
+                        <ul>
+                            <li><a href="#org6830e59">7.1. Usar Jupyter Notebook con Visual Studio Code (VSCode) en el CECONEA </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#org8756cba">8. Como correr jupyter desde el GICA</a>
+                        <ul>
+                            <li><a href="#org6830e58">8.1. Correr Jupyter Notebook con Visual Studio Code (VSCode) desde el GICA </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#org1c71772">9. Datos y recursos disponibles</a></li>
+                    <li><a href="#orgf0f7fa6">10. Virtual environment para Machine learning</a></li>
+                    <li><a href="#org009a1e1">11. Como conectarse con VSCODE desde windows</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="outline-container-orgd70427e" class="outline-2">
+            <h2 id="orgd70427e"><span class="section-number-2">1.</span> Estructura del cluster</h2>
+            <div class="outline-text-2" id="text-1">
+                <p>
+                    Si se quiere ver los recursos disponibles, servidores y demas estructura:
+                </p>
 
-<p>
-<a href="./servidores.html">./servidores.html</a>
-</p>
-</div>
-</div>
+                <p>
+                    <a href="./servidores.html">./servidores.html</a>
+                </p>
+            </div>
+        </div>
 
-<div id="outline-container-orge7da9af" class="outline-2">
-<h2 id="orge7da9af"><span class="section-number-2">2.</span> Instrucciones ingresar al CECONEA</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-Para logearse al sistema:
-</p>
+        <div id="outline-container-orge7da9af" class="outline-2">
+            <h2 id="orge7da9af"><span class="section-number-2">2.</span> Instrucciones ingresar al CECONEA</h2>
+            <div class="outline-text-2" id="text-2">
+                <p>
+                    Para logearse al sistema:
+                </p>
 
-<div class="org-src-container">
-<pre class="src src-bash">ssh usuario@200.45.54.94
+                <div class="org-src-container">
+                    <pre class="src src-bash">ssh usuario@200.45.54.94
 </pre>
-</div>
-<p>
-o
-</p>
+                </div>
+                <p>
+                    o
+                </p>
 
-<div class="org-src-container">
-<pre class="src src-bash">usuario@gica.exa.unne.edu.ar
+                <div class="org-src-container">
+                    <pre class="src src-bash">usuario@gica.exa.unne.edu.ar
 </pre>
-</div>
+                </div>
 
-<p>
-Esta maquina se llama sun es el servidor publico
-</p>
+                <p>
+                    Esta maquina se llama sun es el servidor publico
+                </p>
 
-<p>
-El servidor de calculo para realizar computos (en serie) es grial, desde sun hay que loggearse en grial:
-</p>
+                <p>
+                    El servidor de calculo para realizar computos (en serie) es grial, desde sun hay que loggearse en
+                    grial:
+                </p>
 
-<div class="org-src-container">
-<pre class="src src-bash">sun:~$ ssh grial
+                <div class="org-src-container">
+                    <pre class="src src-bash">sun:~$ ssh grial
 </pre>
-</div>
+                </div>
 
-<p>
-El home de los usuarios (disco) es compartido entre las dos maquinas a traves de NFS (net file system). Todos los archivos que estan en la sun lo vas a ver en la grial. Tambien se puede transferir directamente a la sun y lo vas a ver desde grial.
-</p>
+                <p>
+                    El home de los usuarios (disco) es compartido entre las dos maquinas a traves de NFS (net file
+                    system). Todos los archivos que estan en la sun lo vas a ver en la grial. Tambien se puede
+                    transferir directamente a la sun y lo vas a ver desde grial.
+                </p>
 
-<p>
-Hay dos cosas que pueden ayudar para evitar meterse a una maquina y luego a la otra.
-</p>
+                <p>
+                    Hay dos cosas que pueden ayudar para evitar meterse a una maquina y luego a la otra.
+                </p>
 
-<ol class="org-ol">
-<li>Realizar un tunel.</li>
-<li>ssh without password.</li>
-</ol>
-</div>
-</div>
+                <ol class="org-ol">
+                    <li>Realizar un tunel.</li>
+                    <li>ssh without password.</li>
+                </ol>
+            </div>
+        </div>
 
 
-<div id="outline-container-org2dcb63f" class="outline-2">
-<h2 id="org2dcb63f"><span class="section-number-2">3.</span> Ingresar directamente a la grial</h2>
-<div class="outline-text-2" id="text-3">
-<p>
-Es posible realizar un tunel para ingresar/trabajar directamente a la grial, en lugar de tener que ingresar a la sun y luego a la grial.
-</p>
+        <div id="outline-container-org2dcb63f" class="outline-2">
+            <h2 id="org2dcb63f"><span class="section-number-2">3.</span> Ingresar directamente a la grial</h2>
+            <div class="outline-text-2" id="text-3">
+                <p>
+                    Es posible realizar un tunel para ingresar/trabajar directamente a la grial, en lugar de tener que
+                    ingresar a la sun y luego a la grial.
+                </p>
 
-<p>
-En la maquina local se debe hacer:
-</p>
-<div class="org-src-container">
-<pre class="src src-bash">ssh -fNL 12342:10.11.12.1:22 200.45.54.94
+                <p>
+                    En la maquina local se debe hacer:
+                </p>
+                <div class="org-src-container">
+                    <pre class="src src-bash">ssh -fNL 12342:10.11.12.1:22 200.45.54.94
 </pre>
-</div>
+                </div>
 
-<p>
-y luego se puede acceder a la grial  directamente a traves del puerto 12342:
-</p>
+                <p>
+                    y luego se puede acceder a la grial directamente a traves del puerto 12342:
+                </p>
 
-<div class="org-src-container">
-<pre class="src src-bash">ssh localhost -p 12342 
+                <div class="org-src-container">
+                    <pre class="src src-bash">ssh localhost -p 12342 
 </pre>
-</div>
+                </div>
 
-<div class="org-src-container">
-<pre class="src src-bash">scp -P 12342 localhost:archivo-grial  archivo-pclocal
+                <div class="org-src-container">
+                    <pre class="src src-bash">scp -P 12342 localhost:archivo-grial  archivo-pclocal
 </pre>
-</div>
-</div>
-</div>
+                </div>
+            </div>
+        </div>
 
-<div id="outline-container-orga3fd28e" class="outline-2">
-<h2 id="orga3fd28e"><span class="section-number-2">4.</span> ssh sin claves.</h2>
-<div class="outline-text-2" id="text-4">
-<p>
-Si vamos a trabajar seguido en forma remota se vuelve engorroso estar permanentemente metiendo los passwords cada vez que queremos conectarnos a una terminal del servidor remoto.
-</p>
+        <div id="outline-container-orga3fd28e" class="outline-2">
+            <h2 id="orga3fd28e"><span class="section-number-2">4.</span> ssh sin claves.</h2>
+            <div class="outline-text-2" id="text-4">
+                <p>
+                    Si vamos a trabajar seguido en forma remota se vuelve engorroso estar permanentemente metiendo los
+                    passwords cada vez que queremos conectarnos a una terminal del servidor remoto.
+                </p>
 
-<p>
-ssh tiene un protocolo que lo que hace es con una sola autentificacion (generalmetne cuando comenzamos a trabajar en la computadora local, se ingresa una passphrase y a partir de alli ya vamos a tener acceso a los servidores sin clave. Pero para eso los servidores se tienen que compartir una key.
-</p>
+                <p>
+                    ssh tiene un protocolo que lo que hace es con una sola autentificacion (generalmetne cuando
+                    comenzamos a trabajar en la computadora local, se ingresa una passphrase y a partir de alli ya vamos
+                    a tener acceso a los servidores sin clave. Pero para eso los servidores se tienen que compartir una
+                    key.
+                </p>
 
-<p>
-Generacion de un passphrase para que no nos pida password. ssh without password
-</p>
+                <p>
+                    Generacion de un passphrase para que no nos pida password. ssh without password
+                </p>
 
-<p>
-Lo que vamos a hacer  es  generar una ssh passphase y ponerla en ~/.ssh/authorized<sub>keys</sub>
-</p>
+                <p>
+                    Lo que vamos a hacer es generar una ssh passphase y ponerla en ~/.ssh/authorized<sub>keys</sub>
+                </p>
 
-<p>
-Es obligatorio tener una passphrase!
-</p>
+                <p>
+                    Es obligatorio tener una passphrase!
+                </p>
 
-<p>
-a. Firstly, generate your public/private keys using ssh-keygen
-</p>
+                <p>
+                    a. Firstly, generate your public/private keys using ssh-keygen
+                </p>
 
-<div class="org-src-container">
-<pre class="src src-bash">ssh-keygen -t rsa
+                <div class="org-src-container">
+                    <pre class="src src-bash">ssh-keygen -t rsa
 </pre>
-</div>
+                </div>
 
-<p>
-b. Now copy the id<sub>rsa.pub</sub> to the .ssh/authorized<sub>keys</sub>  file  (y tambien conviene poner en la maquina local las mismas keys).
-</p>
+                <p>
+                    b. Now copy the id<sub>rsa.pub</sub> to the .ssh/authorized<sub>keys</sub> file (y tambien conviene
+                    poner en la maquina local las mismas keys).
+                </p>
 
-<p>
-c. Para poner una sola vez la passphase y que despues la recuerde durante la sesion:
-</p>
+                <p>
+                    c. Para poner una sola vez la passphase y que despues la recuerde durante la sesion:
+                </p>
 
-<div class="org-src-container">
-<pre class="src src-bash"><span style="color: #00ffff;">exec</span> ssh-agent bash
+                <div class="org-src-container">
+                    <pre class="src src-bash"><span style="color: #00ffff;">exec</span> ssh-agent bash
 ssh-add
 </pre>
-</div>
+                </div>
 
-<p>
-Tambien se puede poner en el inicio de la sesion de xwindows.  Una posibilidad es agregarlo en el archivo .xinitrc (El que lee el sistema para ingresar a las xwindows del usuario):
-</p>
+                <p>
+                    Tambien se puede poner en el inicio de la sesion de xwindows. Una posibilidad es agregarlo en el
+                    archivo .xinitrc (El que lee el sistema para ingresar a las xwindows del usuario):
+                </p>
 
-<div class="org-src-container">
-<pre class="src src-bash"><span style="color: #b0c4de;">eval</span> <span style="color: #fa8072;">`ssh-agent -s`</span>
+                <div class="org-src-container">
+                    <pre class="src src-bash"><span style="color: #b0c4de;">eval</span> <span style="color: #fa8072;">`ssh-agent -s`</span>
 <span style="color: #b0c4de;">export</span> <span style="color: #eedd82;">SSH_ASKPASS</span>=/usr/lib64/ssh/x11-ssh-askpass
 /usr/bin/ssh-add &lt; /dev/null 
 </pre>
-</div>
-</div>
-</div>
+                </div>
+            </div>
+        </div>
 
-<div id="outline-container-org8066cb4" class="outline-2">
-<h2 id="org8066cb4"><span class="section-number-2">5.</span> Correr en python en background</h2>
-<div class="outline-text-2" id="text-5">
-<p>
-Para dejar corriendo aplicaciones despues de desloggearse, sin que se nos corte la ejecucion cuando salimos del sistema. Hay que hacer:
-</p>
+        <div id="outline-container-org8066cb4" class="outline-2">
+            <h2 id="org8066cb4"><span class="section-number-2">5.</span> Correr en python en background</h2>
+            <div class="outline-text-2" id="text-5">
+                <p>
+                    Para dejar corriendo aplicaciones despues de desloggearse, sin que se nos corte la ejecucion cuando
+                    salimos del sistema. Hay que hacer:
+                </p>
 
-<div class="org-src-container">
-<pre class="src src-bash">nohup python3 script.py &amp;
+                <div class="org-src-container">
+                    <pre class="src src-bash">nohup python3 script.py &amp;
 </pre>
-</div>
+                </div>
 
-<p>
-Yo tengo un peque~no script "nohupyt" que guarda la salida y los errores en un archivo: 
-</p>
+                <p>
+                    Yo tengo un peque~no script "nohupyt" que guarda la salida y los errores en un archivo:
+                </p>
 
-<div class="org-src-container">
-<pre class="src src-bash"><span style="color: #ff7f24;">#</span><span style="color: #ff7f24;">!/bin/</span><span style="color: #00ffff;">bash</span>
+                <div class="org-src-container">
+                    <pre class="src src-bash"><span style="color: #ff7f24;">#</span><span style="color: #ff7f24;">!/bin/</span><span style="color: #00ffff;">bash</span>
 <span style="color: #ff7f24;">#</span>
 <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Manda a ejecutar un python script en batch con el modo nohup y guarda resultados en un file.</span>
 <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Uso: nohupyt script.py</span>
@@ -225,256 +245,335 @@ Yo tengo un peque~no script "nohupyt" que guarda la salida y los errores en un a
 
 nohup python3 $<span style="color: #eedd82;">filename</span>.py &gt; $<span style="color: #eedd82;">filename</span>.out 2&gt;&amp;1 &amp;
 </pre>
-</div>
-</div>
-</div>
+                </div>
+            </div>
+        </div>
 
-<div id="outline-container-org2a4d097" class="outline-2">
-<h2 id="org2a4d097"><span class="section-number-2">6.</span> screen multiplexer</h2>
-<div class="outline-text-2" id="text-6">
-<p>
-Una alternativa a correr en background es usar screen. screen tiene varias funcionalidades la mas importante es que nos permite trabajar con multiples terminales a la vez en una sola ventana.
-Se accede por:
-</p>
-<div class="org-src-container">
-<pre class="src src-bash">screen
+        <div id="outline-container-org2a4d097" class="outline-2">
+            <h2 id="org2a4d097"><span class="section-number-2">6.</span> screen multiplexer</h2>
+            <div class="outline-text-2" id="text-6">
+                <p>
+                    Una alternativa a correr en background es usar screen. screen tiene varias funcionalidades la mas
+                    importante es que nos permite trabajar con multiples terminales a la vez en una sola ventana.
+                    Se accede por:
+                </p>
+                <div class="org-src-container">
+                    <pre class="src src-bash">screen
 </pre>
-</div>
-</div>
+                </div>
+            </div>
 
-<div id="outline-container-org6830e58" class="outline-3">
-<h3 id="org6830e58"><span class="section-number-3">6.1.</span> Los principales shortcuts de screen</h3>
-<div class="outline-text-3" id="text-6-1">
-<p>
-C-a c  crea una ventana nueva
-C-a n  Switch to the next window.
-C-a p  Switch to the previous window
-C-a S  Split the current region into two new ones.
-C-a w  Show a list of windows.
-C-a X  Kill the current region.
-C-a tab Switch the input focus to the next region.
-C-a "   Present  a list of all windows for selection.
-</p>
+            <div id="outline-container-org6830e58" class="outline-3">
+                <h3 id="org6830e58"><span class="section-number-3">6.1.</span> Los principales shortcuts de screen</h3>
+                <div class="outline-text-3" id="text-6-1">
+                    <p>
+                        C-a c crea una ventana nueva
+                        C-a n Switch to the next window.
+                        C-a p Switch to the previous window
+                        C-a S Split the current region into two new ones.
+                        C-a w Show a list of windows.
+                        C-a X Kill the current region.
+                        C-a tab Switch the input focus to the next region.
+                        C-a " Present a list of all windows for selection.
+                    </p>
 
-<p>
-Listado de las shells y el estado: `screen -ls`
-</p>
+                    <p>
+                        Listado de las shells y el estado: `screen -ls`
+                    </p>
 
-<p>
-Para poner el directorio actual como de trabajo (para abrir nuevas shells): `screen -X eval "chdir $PWD"`
-</p>
-</div>
-</div>
+                    <p>
+                        Para poner el directorio actual como de trabajo (para abrir nuevas shells): `screen -X eval
+                        "chdir $PWD"`
+                    </p>
+                </div>
+            </div>
 
-<div id="outline-container-org3cb8e03" class="outline-3">
-<h3 id="org3cb8e03"><span class="section-number-3">6.2.</span> Correr simulaciones en background con screen</h3>
-<div class="outline-text-3" id="text-6-2">
-<p>
-Para dejar una corrida corriendo y cerrar el screen:
-`Ctrl+a d  detach`
-</p>
+            <div id="outline-container-org3cb8e03" class="outline-3">
+                <h3 id="org3cb8e03"><span class="section-number-3">6.2.</span> Correr simulaciones en background con
+                    screen</h3>
+                <div class="outline-text-3" id="text-6-2">
+                    <p>
+                        Para dejar una corrida corriendo y cerrar el screen:
+                        `Ctrl+a d detach`
+                    </p>
 
-<p>
-Luego cuando se abre se puede listar las terminales que tengo abiertas:
-`screen -ls`
-</p>
+                    <p>
+                        Luego cuando se abre se puede listar las terminales que tengo abiertas:
+                        `screen -ls`
+                    </p>
 
-<p>
-Luego para attach:
-`screen -r 2477.pts-0.server1`
-</p>
+                    <p>
+                        Luego para attach:
+                        `screen -r 2477.pts-0.server1`
+                    </p>
 
-<p>
-En general yo lo abro con los modificadores:
-`screen -DRRq &amp;`
-</p>
+                    <p>
+                        En general yo lo abro con los modificadores:
+                        `screen -DRRq &amp;`
+                    </p>
 
-<p>
-Esto hace que me reattachee todo lo que tenia antes.
-</p>
-</div>
-</div>
+                    <p>
+                        Esto hace que me reattachee todo lo que tenia antes.
+                    </p>
+                </div>
+            </div>
 
-<div id="outline-container-orgb2851bf" class="outline-3">
-<h3 id="orgb2851bf"><span class="section-number-3">6.3.</span> Correr screen por default con el ssh</h3>
-<div class="outline-text-3" id="text-6-3">
-<p>
-La opcion recomendada es:
-</p>
+            <div id="outline-container-orgb2851bf" class="outline-3">
+                <h3 id="orgb2851bf"><span class="section-number-3">6.3.</span> Correr screen por default con el ssh</h3>
+                <div class="outline-text-3" id="text-6-3">
+                    <p>
+                        La opcion recomendada es:
+                    </p>
 
-<div class="org-src-container">
-<pre class="src src-bash">ssh -t host.example.com screen -DRRq &amp;
+                    <div class="org-src-container">
+                        <pre class="src src-bash">ssh -t host.example.com screen -DRRq &amp;
 </pre>
-</div>
-</div>
-</div>
-</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
-<div id="outline-container-org67a6364" class="outline-2">
-<h2 id="org67a6364"><span class="section-number-2">7.</span> Como correr jupyter en el CECONEA</h2>
-<div class="outline-text-2" id="text-7">
-<p>
-Sin en lugar de tener un script python tenemos una jupyter notebook, Lo que queremos es correrla en el servidor y poder un servidor remoto con port forwarding, pero accediendo desde el browser local. Veamos las instrucciones para hacer esto.
-</p>
+        <div id="outline-container-org67a6364" class="outline-2">
+            <h2 id="org67a6364"><span class="section-number-2">7.</span> Como correr jupyter en el CECONEA</h2>
+            <div class="outline-text-2" id="text-7">
+                <p>
+                    Sin en lugar de tener un script python tenemos una jupyter notebook, Lo que queremos es correrla en
+                    el servidor y poder un servidor remoto con port forwarding, pero accediendo desde el browser local.
+                    Veamos las instrucciones para hacer esto.
+                </p>
 
 
-<ol class="org-ol">
-<li>Me conecto a sun y luego a grial:</li>
-</ol>
+                <ol class="org-ol">
+                    <li>Me conecto a sun y luego a grial:</li>
+                </ol>
 
-<div class="org-src-container">
-<pre class="src src-bash">ssh -4fNL 2222:10.11.12.1:22 -4fNL 8889:10.11.12.1:8889 200.45.54.94
+                <div class="org-src-container">
+                    <pre class="src src-bash">ssh -4fNL 2222:10.11.12.1:22 -4fNL 8889:10.11.12.1:8889 200.45.54.94
 </pre>
-</div>
+                </div>
 
-<ol class="org-ol">
-<li>Luego abro la conexion en la maquina local</li>
-</ol>
-<div class="org-src-container">
-<pre class="src src-bash">ssh -p 2222 localhost
+                <ol class="org-ol">
+                    <li>Luego abro la conexion en la maquina local</li>
+                </ol>
+                <div class="org-src-container">
+                    <pre class="src src-bash">ssh -p 2222 localhost
 </pre>
-</div>
+                </div>
 
 
-<ol class="org-ol">
-<li>Abrir una jupyter notebook sin browser:</li>
-</ol>
+                <ol class="org-ol">
+                    <li>Abrir una jupyter notebook sin browser:</li>
+                </ol>
 
-<div class="org-src-container">
-<pre class="src src-bash">jupyter notebook --no-browser --port=8889 --ip=0.0.0.0 
+                <div class="org-src-container">
+                    <pre class="src src-bash">jupyter notebook --no-browser --port=8889 --ip=0.0.0.0 
 </pre>
-</div>
+                </div>
 
-<p>
-Copiar el token que aparece.
-</p>
+                <p>
+                    Copiar el token que aparece.
+                </p>
 
-<ol class="org-ol">
-<li><p>
-En la maquina local en el browser:
-<a href="http://localhost:8889/?token=8d186032bbbe095b294789e863b065a546fcc15b68683c99">http://localhost:8889/?token=8d186032bbbe095b294789e863b065a546fcc15b68683c99</a>
-</p>
+                <ol class="org-ol">
+                    <li>
+                        <p>
+                            En la maquina local en el browser:
+                            <a
+                                href="http://localhost:8889/?token=8d186032bbbe095b294789e863b065a546fcc15b68683c99">http://localhost:8889/?token=8d186032bbbe095b294789e863b065a546fcc15b68683c99</a>
+                        </p>
 
-<p>
-(el token lo tengo que copiar del servidor remoto).
-</p></li>
-</ol>
+                        <p>
+                            (el token lo tengo que copiar del servidor remoto).
+                        </p>
+                    </li>
+                </ol>
 
-<p>
-Para mas detalle ver referencia:
-</p>
+                <p>
+                    Para mas detalle ver referencia:
+                </p>
 
-<p>
-<a href="https://thedatafrog.com/en/articles/remote-jupyter-notebooks/">https://thedatafrog.com/en/articles/remote-jupyter-notebooks/</a>
-</p>
-</div>
-</div>
+                <p>
+                    <a
+                        href="https://thedatafrog.com/en/articles/remote-jupyter-notebooks/">https://thedatafrog.com/en/articles/remote-jupyter-notebooks/</a>
+                </p>
+            </div>
+        </div>
 
-<div id="outline-container-org8756cba" class="outline-2">
-<h2 id="org8756cba"><span class="section-number-2">8.</span> Como correr jupyter desde el GICA</h2>
-<div class="outline-text-2" id="text-8">
-<p>
-Hacer en la maquina local:
-</p>
+        <div id="outline-container-org6830e58" class="outline-3">
+            <h3 id="org6830e59"><span class="section-number-3">7.1.</span> Usar Jupyter Notebook con Visual Studio Code (VSCode) en el CECONEA</h3>
+            <div class="outline-text-3" id="text-6-1">
+                <p>
+                    En VSCode hay que configurar el túnel en tu archivo de configuración de SSH (~/.ssh/config).
+                </p>
+                <p> 1. Abre o crea el archivo <b>~/.ssh/config</b> en tu máquina local. </p>
+                <p>
+                    2. Agrega una entrada para el <b>servidor externo</b> que actuará de servidor intermedio con el <b>servidor de trabajo</b>.
+                </p>
+                <p>
+                    En este ejemplo, <b>sun</b> es el servidor externo y <b>yacy</b> el servidor de trabajo.
+                </p>
+                    <pre class="src src-bash"> 
+    <b>Host</b> sun <em>(si no está configurado el host en tu pc, usar la ip)</em>
+    <b>HostName</b> 200.45.54.94
+    <b>User</b> usuario
+    <b>IdentityFile</b> /path/a/tu/private-key <em>(usar esta linea solo si configuró las passphase)</em>
+                        
+    <b>Host</b> servidor-trabajo
+    <b>HostName</b> 10.11.12.8
+    <b>User</b> usuario
+    <b>ProxyJump</b> sun
+    <b>LocalForward</b> 8888 10.11.12.xxx:8888
+                    </pre> 
+            
+                    <b>ProxyJump</b> es una opción de SSH que te permite pasar por sun automáticamente para acceder al servidor de trabajo.
+                <p>
+                    <p><b>LocalForward</b> 8888 10.11.12.xxx:8888 redirige el puerto 8888 de tu máquina local al servidor de trabajo.</p>
+                </p>
+                <p>
+                    <i>3. Conectar Visual Studio Code con Jupyter</i>
+                    <p>
+                        Con la extensión de Jupyter en VSCode, en caso de no tenerla, instalalo.
+                        Una vez abierto un archivo .ipynb, debes seleccionar un kernel.
+                    </p>
+                    <p>
+                        Iniciar el servidor Jupyter en el servidor de trabajo (10.11.12.8):
+                        Si no está ejecutándose aún, conéctate al servidor de trabajo usando SSH y ejecuta el siguiente comando:
+    
+                        <b>notebook --no-browser --port=8888</b>
+    
+                        Este comando inicia el servidor de Jupyter en el puerto 8888 sin intentar abrir el navegador,
+                        ya que accederás de manera remota.
+                    </p>
+                </p>
 
-<div class="org-src-container">
-<pre class="src src-bash">yvy:~$ ssh -L 8080:localhost:8080 grial
+
+                <p>
+                    <i>4. Acceder desde Visual Studio Code:</i>
+                    <p>
+                    Una vez que el túnel SSH esté establecido, abre Visual Studio Code y presiona Ctrl+Shift+P para abrir la paleta de comandos.
+
+                    Busca y selecciona "Jupyter: Specify Jupyter server for connections".
+
+                     Selecciona "Existing" e ingresa la URL del servidor de Jupyter en tu máquina local a través del túnel, que será algo como:
+
+                    http://localhost:8888
+
+                    Si el servidor Jupyter en el servidor de trabajo está configurado con un token, te pedirá que lo ingreses, lo cual podrás obtener en la terminal donde ejecutaste jupyter notebook.
+                    </p>
+                    <p>
+                        En caso de tener un entorno virtual, basta con activarlo y buscarlo en la sección de kernels.
+                    </p>
+                </p>
+            </div>
+        </div>
+
+        <div id="outline-container-org8756cba" class="outline-2">
+            <h2 id="org8756cba"><span class="section-number-2">8.</span> Como correr jupyter desde el GICA</h2>
+            <div class="outline-text-2" id="text-8">
+                <p>
+                    Hacer en la maquina local:
+                </p>
+
+                <div class="org-src-container">
+                    <pre class="src src-bash">yvy:~$ ssh -L 8080:localhost:8080 grial
 </pre>
-</div>
+                </div>
 
-<p>
-Esto permite abrir una conexion a grial (con port forwarding al puerto 8080). En la grial ejecutar:
-</p>
+                <p>
+                    Esto permite abrir una conexion a grial (con port forwarding al puerto 8080). En la grial ejecutar:
+                </p>
 
-<div class="org-src-container">
-<pre class="src src-bash">grial:~$ jupyter notebook --no-browser --port=8080
+                <div class="org-src-container">
+                    <pre class="src src-bash">grial:~$ jupyter notebook --no-browser --port=8080
 </pre>
-</div>
+                </div>
 
-<p>
-Ahora una vez que se abra el jupyter server se debe copiar la linea:
-</p>
+                <p>
+                    Ahora una vez que se abra el jupyter server se debe copiar la linea:
+                </p>
 
-<p>
-<a href="http://localhost:8080/?token=xxxxxx">http://localhost:8080/?token=xxxxxx</a>
-</p>
+                <p>
+                    <a href="http://localhost:8080/?token=xxxxxx">http://localhost:8080/?token=xxxxxx</a>
+                </p>
 
-<p>
-y pastear en el browser local (firefox o lo que sea)
-</p>
+                <p>
+                    y pastear en el browser local (firefox o lo que sea)
+                </p>
 
-<p>
-Bingo! Estamos corriendo cosas de jupyter en grial con conexion en la maquina local.
-</p>
+                <p>
+                    Bingo! Estamos corriendo cosas de jupyter en grial con conexion en la maquina local.
+                </p>
 
-<p>
-Si nos dice que el puerto esta en uso:  The port 8080 is already in use, trying another port. probar con el puerto recomendado (o con puertos alternativos 8081 8888  8889)
-</p>
-</div>
-</div>
+                <p>
+                    Si nos dice que el puerto esta en uso: The port 8080 is already in use, trying another port. probar
+                    con el puerto recomendado (o con puertos alternativos 8081 8888 8889)
+                </p>
+            </div>
+        </div>
 
-<div id="outline-container-org1c71772" class="outline-2">
-<h2 id="org1c71772"><span class="section-number-2">9.</span> Datos y recursos disponibles</h2>
-<div class="outline-text-2" id="text-9">
-<p>
-En el directorio:
-</p>
+        <div id="outline-container-org1c71772" class="outline-2">
+            <h2 id="org1c71772"><span class="section-number-2">9.</span> Datos y recursos disponibles</h2>
+            <div class="outline-text-2" id="text-9">
+                <p>
+                    En el directorio:
+                </p>
 
-<p>
-/home/data
-</p>
+                <p>
+                    /home/data
+                </p>
 
-<p>
-Se encuentran los links a todos los datos disponibles.
-</p>
-</div>
-</div>
+                <p>
+                    Se encuentran los links a todos los datos disponibles.
+                </p>
+            </div>
+        </div>
 
-<div id="outline-container-orgf0f7fa6" class="outline-2">
-<h2 id="orgf0f7fa6"><span class="section-number-2">10.</span> Virtual environment para Machine learning</h2>
-<div class="outline-text-2" id="text-10">
-<p>
-La version de python por default en grial es la python 3.6.13. Esta tiene todas las librerias de machine learning instaladas.
-</p>
+        <div id="outline-container-orgf0f7fa6" class="outline-2">
+            <h2 id="orgf0f7fa6"><span class="section-number-2">10.</span> Virtual environment para Machine learning</h2>
+            <div class="outline-text-2" id="text-10">
+                <p>
+                    La version de python por default en grial es la python 3.6.13. Esta tiene todas las librerias de
+                    machine learning instaladas.
+                </p>
 
-<p>
-Si se quiere trabajar en versiones mas nuevas hay un par de virtual enviroments en <i>usr/local</i>
-</p>
+                <p>
+                    Si se quiere trabajar en versiones mas nuevas hay un par de virtual enviroments en <i>usr/local</i>
+                </p>
 
 
-<p>
-En /usr/local de grial se encuentra instalada una version (venv) para ml con python 3.9
-</p>
+                <p>
+                    En /usr/local de grial se encuentra instalada una version (venv) para ml con python 3.9
+                </p>
 
-<p>
-Para trabajar en ese enviroment se debe hacer
-</p>
+                <p>
+                    Para trabajar en ese enviroment se debe hacer
+                </p>
 
-<div class="org-src-container">
-<pre class="src src-python">source /usr/local/ml/<span style="color: #b0c4de;">bin</span>/activate
+                <div class="org-src-container">
+                    <pre class="src src-python">source /usr/local/ml/<span style="color: #b0c4de;">bin</span>/activate
 </pre>
-</div>
+                </div>
 
 
-<div class="org-src-container">
-<pre class="src src-python">source /usr/local/ml-p39/<span style="color: #b0c4de;">bin</span>/activate
+                <div class="org-src-container">
+                    <pre class="src src-python">source /usr/local/ml-p39/<span style="color: #b0c4de;">bin</span>/activate
 </pre>
-</div>
-</div>
-</div>
+                </div>
+            </div>
+        </div>
 
-<div id="outline-container-org009a1e1" class="outline-2">
-<h2 id="org009a1e1"><span class="section-number-2">11.</span> Como conectarse con VSCODE desde windows</h2>
-<div class="outline-text-2" id="text-11">
-<ol class="org-ol">
-<li>Instalar la extensión "Remote - SSH".</li>
-<li>Presionar F1 y abrir la opción "Remote-SSH: Open SSH configuration file"</li>
-<li>Una vez en el archivo configuramos la conexión</li>
-</ol>
+        <div id="outline-container-org009a1e1" class="outline-2">
+            <h2 id="org009a1e1"><span class="section-number-2">11.</span> Como conectarse con VSCODE desde windows</h2>
+            <div class="outline-text-2" id="text-11">
+                <ol class="org-ol">
+                    <li>Instalar la extensión "Remote - SSH".</li>
+                    <li>Presionar F1 y abrir la opción "Remote-SSH: Open SSH configuration file"</li>
+                    <li>Una vez en el archivo configuramos la conexión</li>
+                </ol>
 
-<pre class="example">
+                <pre class="example">
 
 ost NOMBRE_QUE_LE_ASIGNAMOS_SERVER_EXTERNO
 HostName 200.45.54.94
@@ -492,37 +591,39 @@ ProxyJump NOMBRE_QUE_LE_ASIGNAMOS_SERVER_EXTERNO
 </pre>
 
 
-<p>
-Utilizando el ProxyJump, estamos utilizando al servidor que coloquemos como intermediario
-para conectarnos al siguiente servidor, de forma tal que es lo mismo que conectarnos mediante SSH a el intermediario y luego un SSH al servidor final.
-</p>
+                <p>
+                    Utilizando el ProxyJump, estamos utilizando al servidor que coloquemos como intermediario
+                    para conectarnos al siguiente servidor, de forma tal que es lo mismo que conectarnos mediante SSH a
+                    el intermediario y luego un SSH al servidor final.
+                </p>
 
-<p>
-En esa configuración tenemos, en orden, el servidor externo configurado (en el caso del
-CECONEA es el sun), luego configuramos dos servidores mas, internos, vemos que se puede
-colocar tanto la IP del servidor como el alias asignado.
-</p>
+                <p>
+                    En esa configuración tenemos, en orden, el servidor externo configurado (en el caso del
+                    CECONEA es el sun), luego configuramos dos servidores mas, internos, vemos que se puede
+                    colocar tanto la IP del servidor como el alias asignado.
+                </p>
 
-<ol class="org-ol">
-<li>Ahora solo resta conectarse al servidor que configuramos: Apretamos F1 y seleccionamos</li>
-</ol>
-<p>
-"Remote-SSH: Connect to &#x2026;".
-</p>
-<ol class="org-ol">
-<li>Al conectarse te va a pedir que especifiques el OS del equipo al que te conectas,</li>
-</ol>
-<p>
-password en caso de ser necesaria y demas información que se suele pedir en una conexión
-SSH.
-</p>
-</div>
-</div>
-</div>
-<div id="postamble" class="status">
-<p class="author">Author: Pulido</p>
-<p class="date">Created: 2023-11-16 Thu 10:04</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
-</div>
+                <ol class="org-ol">
+                    <li>Ahora solo resta conectarse al servidor que configuramos: Apretamos F1 y seleccionamos</li>
+                </ol>
+                <p>
+                    "Remote-SSH: Connect to &#x2026;".
+                </p>
+                <ol class="org-ol">
+                    <li>Al conectarse te va a pedir que especifiques el OS del equipo al que te conectas,</li>
+                </ol>
+                <p>
+                    password en caso de ser necesaria y demas información que se suele pedir en una conexión
+                    SSH.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="postamble" class="status">
+        <p class="author">Author: Pulido</p>
+        <p class="date">Created: 2023-11-16 Thu 10:04</p>
+        <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+    </div>
 </body>
+
 </html>
