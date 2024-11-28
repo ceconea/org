@@ -289,3 +289,110 @@ colocar tanto la IP del servidor como el alias asignado.
 5. Al conectarse te va a pedir que especifiques el OS del equipo al que te conectas,
 password en caso de ser necesaria y demas información que se suele pedir en una conexión
 SSH.
+
+* Python
+** Paralelizacion de "ciclos" en python 
+
+Se puede utilizar multiprocessing para parelizar ciclos o multiprocesos que dependen de una variable d eentrada. Una de las custiones a tener en cuenta es que solo trabaja con un argumento de entrada y asume que es una lista que la va a distribuir cada elemento en un proceso. Si tengo argumentos de entrada fijos conviene definirlos como variables globales (y la funcion como una funcion local que herede las variables globles). Una segunda opcion es trabajarlo con objetos ver mas adelante para esto. (tambien esta el uso de parcial
+
+Uno de los detalles a tener en cuenta es el manejo de los numeros aleatorios durante la paralelizacion. Si no lo tenemos en cuenta los distintos hilos nos van a generar los mismos numeros aleatorios, si quiero tener generadores independientes en cada hilo debemos generar semillas independientes para cada hilo. Como se muestra en el ejemplo de abajo.
+
+*** Paralelizacion con variables aleatorias
+#+BEGIN_SRC ipython :session :results output
+import multiprocessing
+
+# defino una lista con multiples argumentos de entrada
+import numpy.random as rnd
+arg=[[Kf,Qf] for Kf in [0.01,0.2,0.4] for Qf in [0.05,2,4]] # argumentos para el multiproc
+for i in range(len(arg)): # add index for the worker seeds
+    arg[i].append(i)
+a=15 # argumento fijo    
+seed=14 #argumento fijo
+def squarefn(arg):
+    return [rnd.randn(1),a+arg[0]**2+arg[1]**2]
+def squarefn2(arg):
+    rnd.seed(seed+arg[2])
+    return [rnd.randn(1),a+arg[0]**2+arg[1]**2]
+
+ncores  = multiprocessing.cpu_count()
+print(ncores)
+res=[]
+with multiprocessing.Pool(ncores) as p:
+    res.append( p.map(squarefn, arg) )
+for res0 in res:
+    print(res0) # notar que repite los numeros aleatorios
+with multiprocessing.Pool(ncores) as p:
+    res.append( p.map(squarefn2, arg) )
+for res0 in res:
+    print(res0) # con esta no los repite
+
+#+END_SRC
+*** Argumentos fijos de la funcion con partial
+
+Se puede usar partial para pasarle todos los argumentos fijos y dejar solo el argumento variable
+
+#+BEGIN_SRC ipython :session :results output
+def multiproc_map(func,xx,**kwargs):
+  """
+  Multiprocessing.
+  Basically a wrapper for multiprocessing.pool.map(). Deals with
+   - additional, fixed arguments.
+   - KeyboardInterruption (python bug?)
+
+  """
+  NPROC = 2
+  import signal
+  # Parallelization
+  import multiprocessing
+  
+  # stackoverflow.com/a/35134329/38281
+  orig = signal.signal(signal.SIGINT, signal.SIG_IGN)
+  pool = multiprocessing.Pool(NPROC)
+  signal.signal(signal.SIGINT, orig)
+  try:
+    # stackoverflow.com/a/5443941/38281
+    f   = functools.partial(func,**kwargs)
+    res = pool.map_async(f, xx)
+    res = res.get(60)
+  except KeyboardInterrupt as e:
+    # Not sure why, but something this hangs,
+    # so we repeat the try-block to catch another interrupt.
+    try:
+      traceback.print_tb(e.__traceback__)
+      pool.terminate()
+      sys.exit(0)
+    except KeyboardInterrupt as e2:
+      traceback.print_tb(e2.__traceback__)
+      pool.terminate()
+      sys.exit(0)
+  else:
+    pool.close()
+  pool.join()
+
+  return res
+
+#+end_src
+
+Para trabajar con objetos se recomienda utilizar la libreria multiprocess (esta trabaja con dill para de/serializar y permite trabajar con objetos jerarquicos mientras multiprocessing trabaja con pickle).
+
+#+BEGIN_SRC ipython :session :results output
+import multiprocess
+
+class Suma:
+    def  __init__(a=a,seed=seed):
+	self.seed=seed
+	self.a = a
+    def squarefn(arg):
+	rnd.seed(seed+arg[2])
+        return [rnd.randn(1),a+arg[0]**2+arg[1]**2]
+    __call__=squarefn
+arg=[[4,5],[3,2],[7,7]]
+S=Suma(a=5,seed=20)
+res=[]
+with multiprocess.Pool(ncores) as p:
+    res.append( p.map(S.squarefn, arg) )
+
+with multiprocess.Pool(ncores) as p:
+    res.append( p.map(S, arg) )
+#+END_SRC
+
