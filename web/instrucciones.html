@@ -39,14 +39,8 @@
                         </ul>
                     </li>
                     <li><a href="#org67a6364">7. Como correr jupyter en el CECONEA</a>
-                        <ul>
-                            <li><a href="#org6830e59">7.1. Usar Jupyter Notebook con Visual Studio Code (VSCode) en el CECONEA </a></li>
-                        </ul>
                     </li>
                     <li><a href="#org8756cba">8. Como correr jupyter desde el GICA</a>
-                        <ul>
-                            <li><a href="#org6830e58">8.1. Correr Jupyter Notebook con Visual Studio Code (VSCode) desde el GICA </a></li>
-                        </ul>
                     </li>
                     <li><a href="#org1c71772">9. Datos y recursos disponibles</a></li>
                     <li><a href="#orgf0f7fa6">10. Virtual environment para Machine learning</a></li>
@@ -397,74 +391,6 @@ nohup python3 $<span style="color: #eedd82;">filename</span>.py &gt; $<span styl
                 <p>
                     <a
                         href="https://thedatafrog.com/en/articles/remote-jupyter-notebooks/">https://thedatafrog.com/en/articles/remote-jupyter-notebooks/</a>
-                </p>
-            </div>
-        </div>
-
-        <div id="outline-container-org6830e58" class="outline-3">
-            <h3 id="org6830e59"><span class="section-number-3">7.1.</span> Usar Jupyter Notebook con Visual Studio Code (VSCode) en el CECONEA</h3>
-            <div class="outline-text-3" id="text-6-1">
-                <p>
-                    En VSCode hay que configurar el túnel en tu archivo de configuración de SSH (~/.ssh/config).
-                </p>
-                <p> 1. Abre o crea el archivo <b>~/.ssh/config</b> en tu máquina local. </p>
-                <p>
-                    2. Agrega una entrada para el <b>servidor externo</b> que actuará de servidor intermedio con el <b>servidor de trabajo</b>.
-                </p>
-                <p>
-                    En este ejemplo, <b>sun</b> es el servidor externo y <b>yacy</b> el servidor de trabajo.
-                </p>
-                    <pre class="src src-bash"> 
-    <b>Host</b> sun <em>(si no está configurado el host en tu pc, usar la ip)</em>
-    <b>HostName</b> 200.45.54.94
-    <b>User</b> usuario
-    <b>IdentityFile</b> /path/a/tu/private-key <em>(usar esta linea solo si configuró las passphase)</em>
-                        
-    <b>Host</b> servidor-trabajo
-    <b>HostName</b> 10.11.12.8
-    <b>User</b> usuario
-    <b>ProxyJump</b> sun
-    <b>LocalForward</b> 8888 10.11.12.xxx:8888
-                    </pre> 
-            
-                    <b>ProxyJump</b> es una opción de SSH que te permite pasar por sun automáticamente para acceder al servidor de trabajo.
-                <p>
-                    <p><b>LocalForward</b> 8888 10.11.12.xxx:8888 redirige el puerto 8888 de tu máquina local al servidor de trabajo.</p>
-                </p>
-                <p>
-                    <i>3. Conectar Visual Studio Code con Jupyter</i>
-                    <p>
-                        Con la extensión de Jupyter en VSCode, en caso de no tenerla, instalalo.
-                        Una vez abierto un archivo .ipynb, debes seleccionar un kernel.
-                    </p>
-                    <p>
-                        Iniciar el servidor Jupyter en el servidor de trabajo (10.11.12.8):
-                        Si no está ejecutándose aún, conéctate al servidor de trabajo usando SSH y ejecuta el siguiente comando:
-    
-                        <b>notebook --no-browser --port=8888</b>
-    
-                        Este comando inicia el servidor de Jupyter en el puerto 8888 sin intentar abrir el navegador,
-                        ya que accederás de manera remota.
-                    </p>
-                </p>
-
-
-                <p>
-                    <i>4. Acceder desde Visual Studio Code:</i>
-                    <p>
-                    Una vez que el túnel SSH esté establecido, abre Visual Studio Code y presiona Ctrl+Shift+P para abrir la paleta de comandos.
-
-                    Busca y selecciona "Jupyter: Specify Jupyter server for connections".
-
-                     Selecciona "Existing" e ingresa la URL del servidor de Jupyter en tu máquina local a través del túnel, que será algo como:
-
-                    http://localhost:8888
-
-                    Si el servidor Jupyter en el servidor de trabajo está configurado con un token, te pedirá que lo ingreses, lo cual podrás obtener en la terminal donde ejecutaste jupyter notebook.
-                    </p>
-                    <p>
-                        En caso de tener un entorno virtual, basta con activarlo y buscarlo en la sección de kernels.
-                    </p>
                 </p>
             </div>
         </div>
