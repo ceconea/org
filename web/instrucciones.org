@@ -225,6 +225,61 @@ Bingo! Estamos corriendo cosas de jupyter en grial con conexion en la maquina lo
 
 Si nos dice que el puerto esta en uso:  The port 8080 is already in use, trying another port. probar con el puerto recomendado (o con puertos alternativos 8081 8888  8889)
 
+** Como usar Jupyter en el GICA desde Visual Studio Code (VSCode)
+
+1. Abrir el VSCode e instalar la extesión 'Remote-SSH'.
+
+2. Configurar el túnel en tu archivo de configuración de SSH (~/.ssh/config), puedes hacerlo desde VSCode.
+
+2.1 Para esto, usá la combinación de teclas "Ctrl + Shift + p", o en su defecto, buscar en la esquina inferior izquierda un simbolo
+>\< con la leyenda 'Open a Remote Windows', haz click.
+
+2.2 En el centro superior apareceran varias opciones:
+    Selecciona "Connect to Host"
+    Luego, la opción "Configure SSH Hosts"
+    Finalmente selecciona "/home/tu_usuario/.ssh/config".
+
+3. Establece tu configuración, según la necesites:
+
+#+BEGIN_SRC bash
+Host host_del_servidor
+  HostName hostname_del_servidor 
+  User tu_usuario
+  Port 22
+  LocalForward numero_de_puerto localhost:numero_de_puerto
+#+END_SRC
+
+Nota:
+
+LocalForward 8888 10.11.12.xxx:8888 redirige el puerto 8888 de tu máquina local al servidor de trabajo.
+En caso de que el host y hostname no sean detectados correctamente, se puede reemplazar por la ip_address del servidor de trabajo que se quiera usar.
+
+Ejemplo:
+
+#+BEGIN_SRC
+Host hayvy
+    HostName hayvy
+    User juanperez
+    Port 22
+    LocalForward 8888 localhost:8888
+#+END_SRC
+
+4. Luego, guardas la configuración con "Ctrl + s". 
+
+5. con la confi lista, presiona "Ctrl + Shift + p" y selecciona "Connect to Host" y eliges el host que configuraste,
+en el caso del ejemplo sería "hayvy".
+
+6. Ingresa tu clave de usuario en caso de no tener configurada la passphase. ¡¡¡Listo!!! Estas en el servidor de trabajo.
+
+7. Una vez que el túnel SSH esté establecido, abre Visual Studio Code y presiona Ctrl+Shift+P para abrir la paleta de comandos.
+    Busca y selecciona "Jupyter: Specify Jupyter server for connections".
+    Selecciona "Existing" e ingresa la URL del servidor de Jupyter en tu máquina local a través del túnel, que será algo como:
+    http://localhost:8888/token
+    Si el servidor Jupyter en el servidor de trabajo está configurado con un token, te pedirá que lo ingreses, 
+    lo cual podrás obtener en la terminal donde ejecutaste jupyter notebook.
+    O en caso de tener un entorno virtual, basta con activarlo y buscarlo en la sección de kernels.
+
+
 ** Datos y recursos disponibles
 
 En el directorio:
@@ -261,7 +316,7 @@ source /usr/local/ml-p39/bin/activate
 
 #+BEGIN_SRC 
 
-ost NOMBRE_QUE_LE_ASIGNAMOS_SERVER_EXTERNO
+Host NOMBRE_QUE_LE_ASIGNAMOS_SERVER_EXTERNO
 HostName 200.45.54.94
 User TU_USER
 Host NOMBRE_QUE_LE_ASIGNAMOS_SERVER_INTERNO
