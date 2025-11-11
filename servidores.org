@@ -1,0 +1,1101 @@
+h#+TITLE: Caracteristicas de servidores
+#+AUTHOR: Rodrigo Argota | Manuel Pulido
+#+STARTUP: overview
+#+OPTIONS: toc:nil
+
+* Griales                                                                                                                                                              
+                                                                                                                                                                        
+|---------+-------------------------------------------+----------------------------------------+---------------------------------+--------------------+---------------$
+| Host    | CPU                                       | CPU fan                                | Motherboard                     | Fuente             | RAM           $
+|---------+-------------------------------------------+----------------------------------------+---------------------------------+--------------------+---------------$
+| grial   | Intel(R) Core(TM) i9-10850K CPU @ 3.60GHz |                                        | Gygabyte Z590 AORUS ELITE       |                    | 4 x DDR4, 32 G$
+| grial2  | 12th Gen Intel(R) Core(TM) i7-12700       |                                        | ASUS PRIME Z690-P D4            |                    | 2 x DDR4, 32 G$
+| grial3  | Intel(R) Core(TM) i7-10700K CPU @ 3.80GHz | Watercooler                            |                                 |                    |               $
+| grial4  | AMD Ryzen 5 5600G with Radeon Graphics    |                                        | Gygabyte B550M AORUS ELITE      | Corsair RM750e     | 64 GB         $
+| grial 5 | AMD Ryzen 9 9950X 16-Core Processor       | ID-Cooling SE-61-XT basic              | ASUS TUF GAMING X670E-PLUS WIFI | Corsair RM750e     | 4 x DDR5, 32 G$
+| nuevo   | AMD Ryzen 9 9950X 16-Core Processor       | ID-Cooling SE-610-XT basic + FAN 120mm | AORUS X870 ELITE WIFI7          | XPG Kyber 850 GOLD | 4 x DDR5, 32 G$
+|---------+-------------------------------------------+----------------------------------------+---------------------------------+--------------------+---------------$
+      
+* Host: grial
+** Motherboard
+   - Marca: Gigabyte Technology Co., Ltd.
+   - Modelo: Z590 AORUS ELITE
+   - Chipset: x.x
+   - BIOS: F1
+
+** CPU
+   - Modelo: Intel(R) Core(TM) i9-10850K CPU @ 3.60GHz 
+   - Núcleos: 20 (Total CPUs: 20)
+   - Frecuencia: 930.310 MHz
+   - Socket: 
+
+** CPU FAN
+   - Información: 
+
+** RAM
+   - Marca: Corsair
+   - Cantidad: 4
+   - Capacidad total: 125Gi
+   - Frecuencia: 2133MT/s
+   - Tipo: DDR4
+
+** Fuente
+   - Información:       Wake-up Type: Power Switch
+   - Potencia: Por verificar manualmente
+   - Marca: Por verificar manualmente
+   - Certificación: Por verificar manualmente
+
+** Discos     
+** Reportes Hardware
+*** [[file:reportes/hardware/grial/][Cambios realizados]]
+    - Fecha: 2025-11-05
+    - Descripción: Sin novedades
+    - Componentes modificados: Ninguno
+
+*** Template:
+    - Fecha: [YYYY-MM-DD]
+    - Descripción: 
+    - Componentes modificados:
+** Reportes Software
+*** Sistema Operativo
+    - Distribución: openSUSE Leap 15.3
+    - Versión: 5.3.18-59.37-default
+    - Kernel: 5.3.18-59.37-default
+    - Fecha instalación: 
+
+*** Web
+    - Servidor web: No detectado
+    - Versión: N/A
+    - Configuraciones: Por verificar manualmente
+
+* Hostname: grial2
+- Fecha: 2025-11-06
+
+** Motherboard
+- Marca: ASUSTeK COMPUTER INC.
+- Modelo: PRIME Z690-P D4
+- Chipset: N/A
+- BIOS: 0603
+
+** CPU
+- Modelo: 12th Gen Intel(R) Core(TM) i7-12700
+- Cores físicos: 12
+- CPUs lógicas: 20
+- Threads por core: N/A
+- Frecuencia: 4.90 GHz0.80 GHz
+- Socket: LGA1700
+
+** CPU FAN
+- Información: Se recolecta manualmente
+
+** RAM
+- Marca: Corsair
+- Cantidad: 4
+- Capacidad total: 62Gi
+- Frecuencia: 2133 MT/s
+- Tipo: None
+
+** Fuente
+- Información: Power Switch
+- Potencia: Por verificar manualmente
+- Marca: Por verificar manualmente
+- Certificación: Por verificar manualmente
+
+** Discos
+    sda           9,1T disk /mnt/grial_4
+    sdb           3,6T disk /mnt/grial_1
+    sdc           3,6T disk /mnt/grial_2
+    nvme0n1     465,8G disk 
+    ├─nvme0n1p1   100G part /
+    ├─nvme0n1p2   778M part /boot/efi
+    └─nvme0n1p3     2G part [SWAP]
+
+** Reportes Hardware
+- Fecha: 2025-11-06
+- Descripción: Sin novedades
+- Componentes modificados: Ninguno
+
+** Reportes Software
+*** Sistema Operativo
+- Distribución: openSUSE Leap 15.4
+- Kernel: 5.14.21-150400.24.18-default
+- Fecha instalación: Thu Aug 25 02:52:34 2022
+
+*** Web
+- Servidor web: No detectado
+- Versión: N/A
+- Configuraciones: Por verificar manualmente
+
+* Hostname: grial5
+- Fecha: 2025-11-05
+
+** Motherboard
+- Marca: ASUSTeK COMPUTER INC.
+- Modelo: TUF GAMING X670E-PLUS WIFI
+- Chipset: N/A
+- BIOS: 3222
+
+** CPU
+- Modelo: AMD Ryzen 9 9950X 16-Core Processor
+- Cores físicos: 16
+- CPUs lógicas: 32
+- Threads por core: N/A
+- Frecuencia: 4.30 GHz3.00 GHz
+- Socket: AM5
+
+** CPU FAN
+- Información: Se recolecta manualmente
+
+** RAM
+- Marca: Kingston
+- Cantidad: 4
+- Capacidad total: 123Gi
+- Frecuencia: 3600 MT/s
+- Tipo: None
+
+** Fuente
+- Información: Power Switch
+- Potencia: Por verificar manualmente
+- Marca: Por verificar manualmente
+- Certificación: Por verificar manualmente
+
+** Discos
+    nvme0n1     232,9G disk 
+    ├─nvme0n1p1   512M part /boot/efi
+    ├─nvme0n1p2 230,4G part /
+    └─nvme0n1p3     2G part [SWAP]
+
+** Reportes Hardware
+- Fecha: 2025-11-05
+- Descripción: Sin novedades
+- Componentes modificados: Ninguno
+
+** Reportes Software
+*** Sistema Operativo
+- Distribución: openSUSE Leap 15.6
+- Kernel: 6.4.0-150600.23.47-default
+- Fecha instalación: Tue Apr 29 18:57:39 2025
+
+*** Web
+- Servidor web: No detectado
+- Versión: N/A
+- Configuraciones: Por verificar manualmente
+* Hostname: ypy3
+- Fecha: 2025-11-05
+
+** Motherboard
+- Marca: ASUSTeK COMPUTER INC.
+- Modelo: Z97-E/USB 3.1
+- Chipset: N/A
+- BIOS: 0402
+
+** CPU
+- Modelo: Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz
+- Cores físicos: 4
+- CPUs lógicas: 8
+- Threads por core: 2
+- Frecuencia: N/A
+- Socket: SOCKET 1150
+
+** CPU FAN
+- Información: Se recolecta manualmente
+
+** RAM
+- Marca: Kingston
+- Cantidad: 4
+- Capacidad total: 31Gi
+- Frecuencia: 1867 MT/s
+- Tipo: None
+
+** Fuente
+- Información: Power Switch
+- Potencia: Por verificar manualmente
+- Marca: Por verificar manualmente
+- Certificación: Por verificar manualmente
+
+** Discos
+    sda     10,9T disk 
+    └─sda1  10,9T part /mnt/ypy3_1
+    sdb     10,9T disk 
+    └─sdb1  10,9T part /mnt/ypy3_2
+    sdc     10,9T disk 
+    └─sdc1  10,9T part /mnt/ypy3_3
+    sdd     10,9T disk 
+    └─sdd1  10,9T part /mnt/ypy3_5
+    sde     10,9T disk 
+    └─sde1  10,9T part /mnt/ypy3_6
+    sdf    223,6G disk 
+    ├─sdf1 223,6G part /
+    └─sdf2     8M part /boot/efi
+
+** Reportes Hardware
+- Fecha: 2025-11-05
+- Descripción: Sin novedades
+- Componentes modificados: Ninguno
+
+** Reportes Software
+*** Sistema Operativo
+- Distribución: openSUSE Leap 15.6
+- Kernel: 6.4.0-150600.21-default
+- Fecha instalación: Wed Dec 4 20:31:37 2024
+
+*** Web
+- Servidor web: No detectado
+- Versión: N/A
+- Configuraciones: Por verificar manualmente
+
+* Hostname: yacy
+- Fecha: 2025-11-05
+
+** Motherboard
+- Marca: Gigabyte Technology Co., Ltd.
+- Modelo: X670 AORUS ELITE AX
+- Chipset: N/A
+- BIOS: F6
+
+** CPU
+- Modelo: AMD Ryzen 9 7950X 16-Core Processor
+- Cores físicos: 16
+- CPUs lógicas: 32
+- Threads por core: N/A
+- Frecuencia: 5.88 GHz3.00 GHz
+- Socket: AM5
+
+** CPU FAN
+- Información: Se recolecta manualmente
+
+** RAM
+- Marca: Unknown
+- Cantidad: 4
+- Capacidad total: 124Gi
+- Frecuencia: 3600 MT/s
+- Tipo: None
+
+** Fuente
+- Información: Power Switch
+- Potencia: Por verificar manualmente
+- Marca: Por verificar manualmente
+- Certificación: Por verificar manualmente
+
+** Discos
+    sda           1,8T disk /mnt/yacy_3
+    sdb           1,8T disk /mnt/yacy_2
+    nvme0n1     931,5G disk 
+    ├─nvme0n1p1 235,5G part /
+    └─nvme0n1p2   200M part /boot/efi
+    nvme1n1       1,7T disk /mnt/yacy_1
+
+** Reportes Hardware
+- Fecha: 2025-11-05
+- Descripción: Sin novedades
+- Componentes modificados: Ninguno
+
+** Reportes Software
+*** Sistema Operativo
+- Distribución: openSUSE Leap 15.5
+- Kernel: 5.14.21-150500.55.88-default
+- Fecha instalación: Wed Jul 3 02:30:20 2024
+
+*** Web
+- Servidor web: No detectado
+- Versión: N/A
+- Configuraciones: Por verificar manualmente
+* Hostname: yakaira
+- Fecha: 2025-11-05
+
+** Motherboard
+- Marca: ASUSTeK COMPUTER INC.
+- Modelo: Z170-DELUXE
+- Chipset: N/A
+- BIOS: 3201
+
+** CPU
+- Modelo: Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz
+- Cores físicos: 4
+- CPUs lógicas: 8
+- Threads por core: N/A
+- Frecuencia: 4.20 GHz0.80 GHz
+- Socket: LGA1151
+
+** CPU FAN
+- Información: Se recolecta manualmente
+
+** RAM
+- Marca: Corsair
+- Cantidad: 4
+- Capacidad total: 62Gi
+- Frecuencia: 3000 MT/s
+- Tipo: None
+
+** Fuente
+- Información: Power Switch
+- Potencia: Por verificar manualmente
+- Marca: Por verificar manualmente
+- Certificación: Por verificar manualmente
+
+** Discos
+    nvme0n1     931,5G disk 
+    ├─nvme0n1p1   512M part /boot/efi
+    ├─nvme0n1p2 204,8G part /
+    ├─nvme0n1p3 706,6G part /home1
+    └─nvme0n1p4  19,7G part [SWAP]
+
+** Reportes Hardware
+- Fecha: 2025-11-05
+- Descripción: Sin novedades
+- Componentes modificados: Ninguno
+
+** Reportes Software
+*** Sistema Operativo
+- Distribución: openSUSE Leap 15.4
+- Kernel: 5.14.21-150400.22-default
+- Fecha instalación: Thu Sep 1 19:17:22 2022
+
+*** Web
+- Servidor web: No detectado
+- Versión: N/A
+- Configuraciones: Por verificar manualmente
+* Hostname: hayvy
+- Fecha: 2025-11-05
+
+** Motherboard
+- Marca: Supermicro
+- Modelo: H13DSH
+- Chipset: N/A
+- BIOS: 3.0
+
+** CPU
+- Modelo: AMD EPYC 9124 16-Core Processor
+- Cores físicos: 16
+- CPUs lógicas: 64
+- Threads por core: N/A
+- Frecuencia: 3.71 GHz1.50 GHz
+- Socket: CPU1
+
+** CPU FAN
+- Información: Se recolecta manualmente
+
+** RAM
+- Marca: Micron Technology
+- Cantidad: 24
+- Capacidad total: 251Gi
+- Frecuencia: 4800 MT/s
+- Tipo: Multi-bit ECC
+
+** Fuente
+- Información: Power Switch
+- Potencia: Por verificar manualmente
+- Marca: Por verificar manualmente
+- Certificación: Por verificar manualmente
+
+** Discos
+    sda    894,3G disk 
+    ├─sda1 286,7G part /
+    ├─sda2     1G part /boot/efi
+    └─sda3 606,5G part 
+
+** Reportes Hardware
+- Fecha: 2025-11-05
+- Descripción: Sin novedades
+- Componentes modificados: Ninguno
+
+** Reportes Software
+*** Sistema Operativo
+- Distribución: openSUSE Leap 15.6
+- Kernel: 6.4.0-150600.23.25-default
+- Fecha instalación: Mon Dec 9 16:33:13 2024
+
+*** Web
+- Servidor web: No detectado
+- Versión: N/A
+- Configuraciones: Por verificar manualmente
+* Hostname: ysyry
+- Fecha: 2025-11-05
+
+** Motherboard
+- Marca: Supermicro
+- Modelo: H12SSG-AN6
+- Chipset: N/A
+- BIOS: 2.4
+
+** CPU
+- Modelo: AMD EPYC 7313P 16-Core Processor
+- Cores físicos: 16
+- CPUs lógicas: 32
+- Threads por core: 2
+- Frecuencia: N/A
+- Socket: CPU
+
+** CPU FAN
+- Información: Se recolecta manualmente
+
+** RAM
+- Marca: SK Hynix
+- Cantidad: 8
+- Capacidad total: 251Gi
+- Frecuencia: 3200 MT/s
+- Tipo: Multi-bit ECC
+
+** Fuente
+- Información: Power Switch
+- Potencia: Por verificar manualmente
+- Marca: Por verificar manualmente
+- Certificación: Por verificar manualmente
+
+** Discos
+    nvme0n1     931,5G disk 
+    ├─nvme0n1p1   256G part /
+    └─nvme0n1p2   512M part /boot/efi
+
+** Reportes Hardware
+- Fecha: 2025-11-05
+- Descripción: Sin novedades
+- Componentes modificados: Ninguno
+** Manual
+   https://www.supermicro.com/manuals/motherboard/EPYC7000/MNL-2410.pdf
+   https://www.serverparts.pl/en/as-2114gt-dnr-i8711
+
+   Backplane
+   Supermicro 2x 2,5" SFF U.2 NVMe Rear Backplane 1x SFF-8611 8i (x8) OCulink BPN-NVMe3-118GQE - Serverschmiede.com GmbH
+   https://www.serverschmiede.com/en/supermicro-2x-25-sff-u2-nvme-rear-backplane-1x-sff-8611-8i-x8-oculink-bpn-nvme3-118gqe?srsltid=AfmBOoojBjcq5jDZGwGpJ--L9-_as-jwJUwe6En5NyMnsDeCiJpvOkjz
+** Reportes Software
+*** Sistema Operativo
+- Distribución: openSUSE Leap 15.6
+- Kernel: 6.4.0-150600.21-default
+- Fecha instalación: Thu Oct 30 19:34:54 2025
+
+*** Web
+- Servidor web: No detectado
+- Versión: N/A
+- Configuraciones: Por verificar manualmente
+* Hostname: ysyry2
+- Fecha: 2025-11-05
+
+** Motherboard
+- Marca: Supermicro
+- Modelo: H12SSG-AN6
+- Chipset: N/A
+- BIOS: 2.4
+
+** CPU
+- Modelo: AMD EPYC 7313P 16-Core Processor
+- Cores físicos: 16
+- CPUs lógicas: 32
+- Threads por core: 2
+- Frecuencia: N/A
+- Socket: CPU
+
+** CPU FAN
+- Información: Se recolecta manualmente
+
+** RAM
+- Marca: SK Hynix
+- Cantidad: 8
+- Capacidad total: 251Gi
+- Frecuencia: 3200 MT/s
+- Tipo: Multi-bit ECC
+
+** Fuente
+- Información: Power Switch
+- Potencia: Por verificar manualmente
+- Marca: Por verificar manualmente
+- Certificación: Por verificar manualmente
+
+** Discos
+    nvme0n1     894,3G disk 
+    ├─nvme0n1p1   512M part /boot/efi
+    ├─nvme0n1p2 204,8G part /
+    └─nvme0n1p3     2G part [SWAP]
+    nvme1n1       1,7T disk 
+
+** Reportes Hardware
+- Fecha: 2025-11-05
+- Descripción: Sin novedades
+- Componentes modificados: Ninguno
+
+** Reportes Software
+*** Sistema Operativo
+- Distribución: openSUSE Leap 15.5
+- Kernel: 5.14.21-150500.55.36-default
+- Fecha instalación: Fri Nov 3 15:44:46 2023
+
+*** Web
+- Servidor web: No detectado
+- Versión: N/A
+- Configuraciones: Por verificar manualmente
+* Hostname: huayra
+- Fecha: 2025-11-05
+
+** Motherboard
+- Marca: Supermicro
+- Modelo: H12DSU-iN
+- Chipset: N/A
+- BIOS: 2.4
+
+** CPU
+- Modelo: AMD EPYC 7313 16-Core Processor
+- Cores físicos: 16
+- CPUs lógicas: 64
+- Threads por core: N/A
+- Frecuencia: 1.50 GHz3.00 GHz1.50 GHz
+- Socket: CPU1
+
+** CPU FAN
+- Información: Se recolecta manualmente
+
+** RAM
+- Marca: Micron Technology
+- Cantidad: 32
+- Capacidad total: 503Gi
+- Frecuencia: 3200 MT/s
+- Tipo: Multi-bit ECC
+
+** Fuente
+- Información: Power Switch
+- Potencia: Por verificar manualmente
+- Marca: Por verificar manualmente
+- Certificación: Por verificar manualmente
+
+** Discos
+    sda          16,4T disk 
+    └─sda1       16,4T part /mnt/huayra_3
+    sdb          12,7T disk 
+    └─sdb1       12,7T part /mnt/huayra_4
+    sdc          12,7T disk 
+    └─sdc1       12,7T part /mnt/huayra_2
+    sdd          12,7T disk 
+    └─sdd1       12,7T part /mnt/huayra_5
+    sde          16,4T disk 
+    └─sde1       16,4T part /mnt/huayra_6
+    sdf          12,7T disk 
+    └─sdf1       12,7T part /mnt/huayra_7
+    sdg          12,7T disk 
+    sdh          10,9T disk 
+    └─sdh1       10,9T part /mnt/huayra_1
+    sdi          16,4T disk 
+    └─sdi1       16,4T part /mnt/huayra_8
+    sdj          16,4T disk 
+    sdk          16,4T disk 
+    nvme0n1     349,3G disk 
+    ├─nvme0n1p1   327M part /boot/efi
+    ├─nvme0n1p2     9G part [SWAP]
+    └─nvme0n1p3   100G part /
+
+** Reportes Hardware
+- Fecha: 2025-11-05
+- Descripción: Sin novedades
+- Componentes modificados: Ninguno
+
+** Reportes Software
+*** Sistema Operativo
+- Distribución: openSUSE Leap 15.4
+- Kernel: 5.14.21-150400.24.33-default
+- Fecha instalación: Mon Dec 5 16:40:02 2022
+
+*** Web
+- Servidor web: No detectado
+- Versión: N/A
+- Configuraciones: Por verificar manualmente
+* Hostname: huayra13
+- Fecha: 2025-11-05
+
+** Motherboard
+- Marca: Supermicro
+- Modelo: X9DRT-F/IBQF/IBFF
+- Chipset: N/A
+- BIOS: 3.0
+
+** CPU
+- Modelo: Intel(R) Xeon(R) CPU E5-2620 0 @ 2.00GHz
+- Cores físicos: 6
+- CPUs lógicas: 24
+- Threads por core: N/A
+- Frecuencia: 2.50 GHz1.20 GHz
+- Socket: CPU 1
+
+** CPU FAN
+- Información: Se recolecta manualmente
+
+** RAM
+- Marca: Hynix Semiconductor
+- Cantidad: 9
+- Capacidad total: 31Gi
+- Frecuencia: 1333 MT/s
+- Tipo: Multi-bit ECC
+
+** Fuente
+- Información: Power Switch
+- Potencia: Por verificar manualmente
+- Marca: Por verificar manualmente
+- Certificación: Por verificar manualmente
+
+** Discos
+    sda    465,8G disk 
+    ├─sda1     1G part /boot/efi
+    ├─sda2   200G part /
+    └─sda3    16G part [SWAP]
+
+** Reportes Hardware
+- Fecha: 2025-11-05
+- Descripción: Sin novedades
+- Componentes modificados: Ninguno
+
+** Reportes Software
+*** Sistema Operativo
+- Distribución: openSUSE Leap 15.6
+- Kernel: 6.4.0-150600.23.73-default
+- Fecha instalación: Fri Nov 17 17:12:52 2023
+
+*** Web
+- Servidor web: No detectado
+- Versión: N/A
+- Configuraciones: Por verificar manualmente
+* Hostname: huayra15
+- Fecha: 2025-11-05
+
+** Motherboard
+- Marca: Supermicro
+- Modelo: X9DRT-F/IBQF/IBFF
+- Chipset: N/A
+- BIOS: 3.0
+
+** CPU
+- Modelo: Intel(R) Xeon(R) CPU E5-2620 v2 @ 2.10GHz
+- Cores físicos: 6
+- CPUs lógicas: 12
+- Threads por core: N/A
+- Frecuencia: 2.60 GHz1.20 GHz
+- Socket: CPU 1
+
+** CPU FAN
+- Información: Se recolecta manualmente
+
+** RAM
+- Marca: Samsung
+- Cantidad: 9
+- Capacidad total: 31Gi
+- Frecuencia: 1600 MT/s
+- Tipo: Multi-bit ECC
+
+** Fuente
+- Información: Power Switch
+- Potencia: Por verificar manualmente
+- Marca: Por verificar manualmente
+- Certificación: Por verificar manualmente
+
+** Discos
+    sda     1,4T disk 
+    ├─sda1    1G part /boot/efi
+    ├─sda2  200G part 
+    ├─sda3  200G part /
+    └─sda4    2G part [SWAP]
+    sdb     1,8T disk 
+    └─sdb1  1,8T part /mnt/soana_data
+
+** Reportes Hardware
+- Fecha: 2025-11-05
+- Descripción: Sin novedades
+- Componentes modificados: Ninguno
+
+** Reportes Software
+*** Sistema Operativo
+- Distribución: openSUSE Leap 15.6
+- Kernel: 6.4.0-150600.23.47-default
+- Fecha instalación: Fri May 9 17:08:07 2025
+
+*** Web
+- Servidor web: No detectado
+- Versión: N/A
+- Configuraciones: Por verificar manualmente
+* Hostname: huayra17
+- Fecha: 2023-08-17
+
+** Motherboard
+- Marca: Supermicro
+- Modelo: X9DRT-F/IBQF/IBFF
+- Chipset: N/A
+- BIOS: 3.0
+
+** CPU
+- Modelo: Intel(R) Xeon(R) CPU E5-2620 v2 @ 2.10GHz
+- Cores físicos: 6
+- CPUs lógicas: 24
+- Threads por core: 2
+- Frecuencia: N/A
+- Socket: CPU 1
+
+** CPU FAN
+- Información: Se recolecta manualmente
+
+** RAM
+- Marca: Samsung
+- Cantidad: 9
+- Capacidad total: 62Gi
+- Frecuencia: 1600 MT/s
+- Tipo: Multi-bit ECC
+
+** Fuente
+- Información: Power Switch
+- Potencia: Por verificar manualmente
+- Marca: Por verificar manualmente
+- Certificación: Por verificar manualmente
+
+** Discos
+    sda    931,5G disk 
+    ├─sda1   512M part /boot/efi
+    ├─sda2 204,8G part /
+    └─sda3    16G part [SWAP]
+
+** Reportes Hardware
+- Fecha: 2023-08-17
+- Descripción: Sin novedades
+- Componentes modificados: Ninguno
+
+** Reportes Software
+*** Sistema Operativo
+- Distribución: openSUSE Leap 15.5
+- Kernel: 5.14.21-150500.55.36-default
+- Fecha instalación: Mon Nov 13 17:54:30 2023
+
+*** Web
+- Servidor web: No detectado
+- Versión: N/A
+- Configuraciones: Por verificar manualmente
+* Hostname: huayra18
+- Fecha: 2023-08-17
+
+** Motherboard
+- Marca: Supermicro
+- Modelo: X9DRT-F/IBQF/IBFF
+- Chipset: N/A
+- BIOS: 3.0
+
+** CPU
+- Modelo: Intel(R) Xeon(R) CPU E5-2620 v2 @ 2.10GHz
+- Cores físicos: 6
+- CPUs lógicas: 24
+- Threads por core: 2
+- Frecuencia: N/A
+- Socket: CPU 1
+
+** CPU FAN
+- Información: Se recolecta manualmente
+
+** RAM
+- Marca: Samsung
+- Cantidad: 9
+- Capacidad total: 31Gi
+- Frecuencia: 1600 MT/s
+- Tipo: Multi-bit ECC
+
+** Fuente
+- Información: Power Switch
+- Potencia: Por verificar manualmente
+- Marca: Por verificar manualmente
+- Certificación: Por verificar manualmente
+
+** Discos
+    sda    931,5G disk 
+    ├─sda1   200G part /
+    ├─sda2   512M part /boot/efi
+    └─sda3    16G part [SWAP]
+
+** Reportes Hardware
+- Fecha: 2023-08-17
+- Descripción: Sin novedades
+- Componentes modificados: Ninguno
+
+** Reportes Software
+*** Sistema Operativo
+- Distribución: openSUSE Leap 15.5
+- Kernel: 5.14.21-150500.55.36-default
+- Fecha instalación: Fri May 26 07:53:45 2023
+
+*** Web
+- Servidor web: No detectado
+- Versión: N/A
+- Configuraciones: Por verificar manualmente
+* Hostname: huayra19
+- Fecha: 2025-11-05
+
+** Motherboard
+- Marca: Supermicro
+- Modelo: X9DRT-F/IBQF/IBFF
+- Chipset: N/A
+- BIOS: 3.0
+
+** CPU
+- Modelo: Intel(R) Xeon(R) CPU E5-2620 0 @ 2.00GHz
+- Cores físicos: 6
+- CPUs lógicas: 24
+- Threads por core: 2
+- Frecuencia: N/A
+- Socket: CPU 1
+
+** CPU FAN
+- Información: Se recolecta manualmente
+
+** RAM
+- Marca: Hynix Semiconductor
+- Cantidad: 9
+- Capacidad total: 31Gi
+- Frecuencia: 1333 MT/s
+- Tipo: Multi-bit ECC
+
+** Fuente
+- Información: Power Switch
+- Potencia: Por verificar manualmente
+- Marca: Por verificar manualmente
+- Certificación: Por verificar manualmente
+
+** Discos
+    sda    465,8G disk 
+    ├─sda1   778M part /boot/efi
+    ├─sda2   150G part /
+    └─sda3    15G part 
+
+** Reportes Hardware
+- Fecha: 2025-11-05
+- Descripción: Sin novedades
+- Componentes modificados: Ninguno
+
+** Reportes Software
+*** Sistema Operativo
+- Distribución: openSUSE Leap 15.5
+- Kernel: 5.14.21-150500.53-default
+- Fecha instalación: Tue May 23 09:44:33 2023
+
+*** Web
+- Servidor web: No detectado
+- Versión: N/A
+- Configuraciones: Por verificar manualmente
+* Hostname: huayra22
+- Fecha: 2025-11-05
+
+** Motherboard
+- Marca: Supermicro
+- Modelo: X9DRT-F/IBQF/IBFF
+- Chipset: N/A
+- BIOS: 3.0
+
+** CPU
+- Modelo: Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz
+- Cores físicos: 6
+- CPUs lógicas: 24
+- Threads por core: 2
+- Frecuencia: N/A
+- Socket: CPU 1
+
+** CPU FAN
+- Información: Se recolecta manualmente
+
+** RAM
+- Marca: Hynix Semiconductor
+- Cantidad: 9
+- Capacidad total: 31Gi
+- Frecuencia: 1600 MT/s
+- Tipo: Multi-bit ECC
+
+** Fuente
+- Información: Power Switch
+- Potencia: Por verificar manualmente
+- Marca: Por verificar manualmente
+- Certificación: Por verificar manualmente
+
+** Discos
+    sda    931,5G disk 
+    ├─sda1     8M part 
+    ├─sda2     1G part /boot/efi
+    ├─sda3   200G part /
+    └─sda4    16G part [SWAP]
+
+** Reportes Hardware
+- Fecha: 2025-11-05
+- Descripción: Sin novedades
+- Componentes modificados: Ninguno
+
+** Reportes Software
+*** Sistema Operativo
+- Distribución: openSUSE Leap 15.5
+- Kernel: 5.14.21-150500.53-default
+- Fecha instalación: Fri Nov 17 17:33:20 2023
+
+*** Web
+- Servidor web: No detectado
+- Versión: N/A
+- Configuraciones: Por verificar manualmente
+* Hostname: huayra23
+- Fecha: 2025-11-05
+
+** Motherboard
+- Marca: Supermicro
+- Modelo: X9DRT-F/IBQF/IBFF
+- Chipset: N/A
+- BIOS: 3.0
+
+** CPU
+- Modelo: Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz
+- Cores físicos: 6
+- CPUs lógicas: 24
+- Threads por core: 2
+- Frecuencia: N/A
+- Socket: CPU 1
+
+** CPU FAN
+- Información: Se recolecta manualmente
+
+** RAM
+- Marca: Hynix Semiconductor
+- Cantidad: 9
+- Capacidad total: 31Gi
+- Frecuencia: 1600 MT/s
+- Tipo: Multi-bit ECC
+
+** Fuente
+- Información: Power Switch
+- Potencia: Por verificar manualmente
+- Marca: Por verificar manualmente
+- Certificación: Por verificar manualmente
+
+** Discos
+    sda    931,5G disk 
+    ├─sda1     8M part 
+    ├─sda2     1G part /boot/efi
+    ├─sda3 204,8G part /
+    └─sda4    16G part [SWAP]
+
+** Reportes Hardware
+- Fecha: 2025-11-05
+- Descripción: Sin novedades
+- Componentes modificados: Ninguno
+
+** Reportes Software
+*** Sistema Operativo
+- Distribución: openSUSE Leap 15.5
+- Kernel: 5.14.21-150500.53-default
+- Fecha instalación: Fri Nov 17 18:11:27 2023
+
+*** Web
+- Servidor web: No detectado
+- Versión: N/A
+- Configuraciones: Por verificar manualmente
+* Hostname: huayra26
+- Fecha: 2025-11-05
+
+** Motherboard
+- Marca: Supermicro
+- Modelo: X9DRT-F/IBQF/IBFF
+- Chipset: N/A
+- BIOS: 3.0
+
+** CPU
+- Modelo: Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz
+- Cores físicos: 6
+- CPUs lógicas: 24
+- Threads por core: 2
+- Frecuencia: N/A
+- Socket: CPU 1
+
+** CPU FAN
+- Información: Se recolecta manualmente
+
+** RAM
+- Marca: Hynix Semiconductor
+- Cantidad: 9
+- Capacidad total: 62Gi
+- Frecuencia: 1600 MT/s
+- Tipo: Multi-bit ECC
+
+** Fuente
+- Información: Power Switch
+- Potencia: Por verificar manualmente
+- Marca: Por verificar manualmente
+- Certificación: Por verificar manualmente
+
+** Discos
+    sda    931,5G disk 
+    ├─sda1     1G part /boot/efi
+    ├─sda2 204,8G part /
+    ├─sda3     2G part [SWAP]
+    ├─sda4     8M part 
+    └─sda5 723,7G part 
+
+** Reportes Hardware
+- Fecha: 2025-11-05
+- Descripción: Sin novedades
+- Componentes modificados: Ninguno
+
+** Reportes Software
+*** Sistema Operativo
+- Distribución: openSUSE Leap 15.5
+- Kernel: 5.14.21-150500.53-default
+- Fecha instalación: Mon Nov 13 19:24:49 2023
+
+*** Web
+- Servidor web: No detectado
+- Versión: N/A
+- Configuraciones: Por verificar manualmente
+* Hostname: sun
+- Fecha: 2025-11-05
+
+** Motherboard
+- Marca: Sun Microsystems
+- Modelo: S39
+- Chipset: N/A
+- BIOS: S39_3D12
+
+** CPU
+- Modelo: Quad-Core AMD Opteron(tm) Processor 2376
+- Cores físicos: 4
+- CPUs lógicas: 8
+- Threads por core: N/A
+- Frecuencia: 2.30 GHz0.80 GHz
+- Socket: CPU 1
+
+** CPU FAN
+- Información: Se recolecta manualmente
+
+** RAM
+- Marca: Manufacturer0
+- Cantidad: 16
+- Capacidad total: 31Gi
+- Frecuencia: N/A
+- Tipo: Single-bit ECC
+
+** Fuente
+- Información: Power Switch
+- Potencia: Por verificar manualmente
+- Marca: Por verificar manualmente
+- Certificación: Por verificar manualmente
+
+** Discos
+    sda    232,9G disk 
+    ├─sda1   150G part /
+    ├─sda2   389M part /boot/efi
+    └─sda3    16G part [SWAP]
+
+** Reportes Hardware
+- Fecha: 2025-11-05
+- Descripción: Sin novedades
+- Componentes modificados: Ninguno
+
+** Reportes Software
+*** Sistema Operativo
+- Distribución: openSUSE Leap 15.6
+- Kernel: 6.4.0-150600.23.70-default
+- Fecha instalación: Tue Sep 9 19:18:03 2025
+
+*** Web
+- Servidor web: No detectado
+- Versión: N/A
+- Configuraciones: Por verificar manualmente
+
+
+* Faltan
+  xumuc
+  grial4
+  grial3
+  ypy
+  10.11.12.137
+  10.11.12.141
+  arasys
