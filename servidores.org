@@ -376,10 +376,7 @@ h#+TITLE: Caracteristicas de servidores
 - Tipo: None
 
 ** Fuente
-- Información: Power Switch
-- Potencia: Por verificar manualmente
-- Marca: Por verificar manualmente
-- Certificación: Por verificar manualmente
+- Información: Redragon RGPS 600 W PS002 80 plus bronce
 
 ** Discos
     nvme0n1     931,5G disk 
