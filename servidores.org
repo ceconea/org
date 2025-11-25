@@ -126,6 +126,58 @@ h#+TITLE: Caracteristicas de servidores
 - Versión: N/A
 - Configuraciones: Por verificar manualmente
 
+* Hostname: grial4
+- Fecha: 2025-11-25
+
+** Motherboard
+- Marca: Gigabyte Technology Co., Ltd.
+- Modelo: B550M AORUS ELITE
+- Chipset: N/A
+- BIOS: FB
+
+** CPU
+- Modelo: AMD Ryzen 5 5600G with Radeon Graphics
+- Cores físicos: 6
+- CPUs lógicas: 12
+- Threads por core: 2
+- Frecuencia: N/A
+- Socket: AM4
+
+** CPU FAN
+- Información: Se recolecta manualmente
+
+** RAM
+- Marca: Unknown
+- Cantidad: 4
+- Capacidad total: 62Gi
+- Frecuencia: 2133 MT/s
+- Tipo: None
+
+** Fuente
+- Información: Corsair RM750e
+
+** Discos
+    nvme0n1     232.9G disk 
+    ├─nvme0n1p1   512M part /boot/efi
+    ├─nvme0n1p2 230.4G part /var
+    └─nvme0n1p3     2G part [SWAP]
+
+** Reportes Hardware
+- Fecha: 2025-11-25
+- Descripción: Sin novedades
+- Componentes modificados: Ninguno
+
+** Reportes Software
+*** Sistema Operativo
+- Distribución: openSUSE Leap 15.5
+- Kernel: 5.14.21-150500.55.88-default
+- Fecha instalación: N/A
+
+*** Web
+- Servidor web: No detectado
+- Versión: N/A
+- Configuraciones: Por verificar manualmente
+
 * Hostname: grial5
 - Fecha: 2025-11-05
 
@@ -154,11 +206,7 @@ h#+TITLE: Caracteristicas de servidores
 - Tipo: None
 
 ** Fuente
-- Información: Power Switch
-- Potencia: Por verificar manualmente
-- Marca: Por verificar manualmente
-- Certificación: Por verificar manualmente
-
+- Información: Corsair RM750e
 ** Discos
     nvme0n1     232,9G disk 
     ├─nvme0n1p1   512M part /boot/efi
